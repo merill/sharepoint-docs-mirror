@@ -1,0 +1,18 @@
+{
+  "sitemapIndex": "https://learn.microsoft.com/_sitemaps/sitemapindex.xml",
+  "sitemaps": "/_sitemaps/sharepoint_en-us_\\d+\\.xml$",
+  "tocs": [
+    "https://learn.microsoft.com/en-us/sharepoint/toc.json"
+  ],
+  "extraUrls": [],
+  "include": "^https://learn\\.microsoft\\.com/en-us/sharepoint/",
+  "exclude": [
+    "^https://learn\\.microsoft\\.com/en-us/sharepoint/dev/"
+  ],
+  "trackedPaths": "^SharePoint/SharePointOnline/",
+  "sourceRepos": [
+    "MicrosoftDocs/OfficeDocs-SharePoint-pr"
+  ],
+  "concurrency": 4,
+  "priority": "(whats-new|release-notes|what-s-new|new-features|deprecat|retire)"
+}
