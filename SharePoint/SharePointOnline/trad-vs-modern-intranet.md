@@ -1,0 +1,153 @@
+---
+layout: Conceptual
+title: How to think about your intelligent intranet - SharePoint in Microsoft 365 | Microsoft Learn
+canonicalUrl: https://learn.microsoft.com/en-us/sharepoint/trad-vs-modern-intranet
+breadcrumb_path: /sharepoint/breadcrumb/toc.json
+uhfHeaderId: MSDocsHeader-SharePoint
+feedback_system: Standard
+feedback_product_url: https://feedbackportal.microsoft.com/feedback/forum/06735c62-321c-ec11-b6e7-0022481f8472
+recommendations: true
+ms.date: 2026-06-25T00:00:00.0000000Z
+ms.author: ruihu
+author: maggierui
+manager: jtremper
+audience: Admin
+f1.keywords:
+- NOCSH
+ms.topic: how-to
+ms.service: sharepoint-online
+ms.subservice: sites-pages
+ms.localizationpriority: medium
+ms.collection:
+- Strat_SP_modern
+- M365-collaboration
+- m365solution-spintranet
+- m365solution-scenario
+- highpri
+ms.custom:
+- seo-marvel-may2020
+search.appverid:
+- SPO160
+- MET150
+description: In this article, you'll learn about how to think about your intelligent intranet.
+locale: en-us
+document_id: 13aaec58-60db-9674-1a9e-62a3f035cb0a
+document_version_independent_id: c73cf807-c272-7b14-f9fe-1cf0e62a4b77
+original_content_git_url: https://github.com/MicrosoftDocs/OfficeDocs-SharePoint-pr/blob/live/SharePoint/SharePointOnline/trad-vs-modern-intranet.md
+site_name: Docs
+depot_name: office.OfficeDocs-SharePoint
+page_type: conceptual
+toc_rel: toc.json
+pdf_url_template: https://learn.microsoft.com/pdfstore/en-us/office.OfficeDocs-SharePoint/{branchName}{pdfName}
+feedback_help_link_type: ''
+feedback_help_link_url: ''
+asset_id: trad-vs-modern-intranet
+moniker_range_name: 
+monikers: []
+item_type: Content
+source_path: SharePoint/SharePointOnline/trad-vs-modern-intranet.md
+cmProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/9d7be3ef-f27c-4c7f-9eba-67c3cd429995
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/e4f48d48-dfb7-4973-a019-e504674667cb
+- https://authoring-docs-microsoft.poolparty.biz/devrel/63959238-cb90-4871-a33d-4a5519097e47
+spProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/feeb50f3-b677-44f9-b3a6-5f2f58182b0d
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/495840e0-c52f-49d2-a584-185aefeb98c7
+- https://authoring-docs-microsoft.poolparty.biz/devrel/78d87f42-5582-4a6b-90be-7db2f12b34e6
+platformId: f2056418-fe7f-dfd6-2aed-6c14fce23e8b
+---
+
+# How to think about your intelligent intranet - SharePoint in Microsoft 365 | Microsoft Learn
+
+These days, there's an abundance of discussions about best practices to modernize your intranet - designing an intranet the new way, in the “modern” way, in the intelligent way - and so on. There aren't many discussions about what modern means as a concept, how modern thinking relates to technology, and how to apply modern principals to your organization's intranet.
+
+Use this guide to understand how to leverage SharePoint to meet your organization's needs through integrating modern concepts into the design of your intranet, portals, and sites.
+
+## What does intelligent mean?
+
+In the modern world, the intranet should be the center of your workplace. An intelligent SharePoint intranet is engaging, informative, personalized, and integrated with the other portals and sites in your intranet as well as other Microsoft 365 apps like Microsoft Teams and Viva Engage. Modern intranets take many shapes and sizes depending on the ever-evolving needs of the business.
+
+Hallmarks of what constitutes an intelligent intranet:
+
+- **Rapid deployment**: Adaptable designs can be built using out of the box pages and web parts and no longer solely depends on IT to deploy.
+- **Built with the UX in mind**: Accessible design principals are built into the modern experience enabling viewers to securely access the intranet on any device.
+- **Personalized experience**: Features like audience targeting, news, the Highlighted Content web part, and the My Feed web part make it easy to dynamically display personalized content.
+- **Software as a service**: Updates are automatic, ensuring you are using the latest technology.
+
+## Why invest in the modern approach?
+
+Investing in the modern approach looks different depending on the condition of your current intranet but no matter the path it will require strategic planning and a team to implement changes. By spending resources modernizing your intranet now, you will enable your organization to move faster and more efficiently than before.
+
+What makes modernizing your intranet worth the effort:
+
+- **Move at the speed of your business**: Display content dynamically using flexible designs that scale as your business grows.
+- **Meet employees where they are**: Target relevant content to specific viewers on any device.
+- **Reduce the cost of technical resources**: Security, permissions, sharing, and other governance components can be centrally managed across Microsoft 365 apps.
+- **Improves the likelihood of intranet success**: Viewers are more likely to use the intranet when content is relevant, easy to navigate, and mobile.
+
+## How to think about intelligent intranets
+
+### Secure and accessible
+
+| Traditional | New | How to get started |
+| --- | --- | --- |
+| Deployed solely by IT | Relies on a collaborative approach with several stakeholders across departments of the organization | Instead of assigning intranet tasks to a few IT members, assemble a team that represents the needs of your viewers and business to create intranet solutions. [Learn more about modern intranet teams](intranet-team-overview) |
+| Manually governed by IT | Uses governance models that provide flexibility for users in a compliant way based of the organization's goals - sharing, provisioning, risk mitigation | Instead of asking for permission to create a site from IT, site owners can create their own sites using SharePoint's out-of-the-box responsive designs and custom theming. [Learn more about managing site creation](manage-site-creation) |
+| Resources can only be accessed in the office or on a computer | Work anytime, anywhere, any place, on any device | Instead of limiting access to content, use SharePoint security and compliance features to make sure viewers have access to the right information on any device.  SharePoint works by default on mobile devices. |
+
+### Informs and engages
+
+| Traditional | New | How to get started |
+| --- | --- | --- |
+| Communication primarily through email | Communicate primarily through SharePoint news, community portals, and Viva Engage | Instead of sharing a project update in a newsletter, announce your update on your project's site and in the Viva Engage feed to start an engaging conversation. [Learn more about using the Viva Engage web part](https://support.office.com/article/use-a-yammer-web-part-in-sharepoint-online-a53cfa0c-3d09-42c8-a286-1038a81c59da) |
+| Outdated news is shared in a corporate news feed or newsletter | SharePoint news posts transform news into a visually engaging experience that can be created quickly and distributed to specific audiences in real-time | Instead of communicating big announcements through an org-wide email, create a news post that will dynamically display to your relevant audience. [Learn more about creating a news site](organization-news-site) |
+| Disjointed experience for international organizations | Multi-lingual and audience targeting features ensure users relate to relevant information | Instead of creating separate experiences for unique viewers, target navigational links to specific audiences. [Learn more about targeting content to specific audiences](https://support.microsoft.com/en-us/office/target-navigation-news-and-files-to-specific-audiences-33d84cb6-14ed-4e53-a426-74c38ea32293) |
+
+### Builds community and culture
+
+| Traditional | New | How to get started |
+| --- | --- | --- |
+| Intranet structure is based on organization structure | Role and task-based portals house community initiative-driven projects | Instead of separating content by organizational structure, use hubs to organize content based on business initiatives. [Learn more about planning hubs](planning-hub-sites) |
+| In-person gatherings to build team and organizational culture | Frequent engagement through online events that showcase people, celebrate milestones, and maintain consistent conversation using Viva Engage and Microsoft Stream | Instead of semi-annual gatherings, record online events and embed the event recording using Microsoft stream in a news post. [Learn more about using the Stream web part](/en-us/clipchamp/portals-overview). |
+| Infrequent interaction between the organization and leadership | Aligns organizations with leadership through live events, dynamic content like news, and social connection | Instead of formal engagements with leadership, create accessible outlets in the form of live events in Viva Engage. [Learn more about organizing a live event in Viva Engage](https://support.office.com/article/Organize-a-live-event-in-yammer-105dd7af-9caf-4a5e-8a44-56d203e96551) |
+
+### Creates and extends knowledge
+
+| Traditional | New | How to get started |
+| --- | --- | --- |
+| Static information like FAQ | Dynamic information that's community generated in Viva Engage | Instead of creating a FAQ page, embed a Viva Engage web part that connects viewers to subject matter experts and provides insights into previous conversations. [Learn more about using the Viva Engage web part](https://support.office.com/article/use-a-yammer-web-part-in-sharepoint-online-a53cfa0c-3d09-42c8-a286-1038a81c59da) |
+| Browse to find | Search *and* browse to find | Instead of limiting viewers access to content, use SharePoint modern search features that protect sensitive content while increasing search success. [Learn more about search in SharePoint](overview-of-search) |
+| Collection of websites | Collection of experiences | Instead of organizing your internet by area of business, organize by business outcomes and initiatives. [Learn more about planning hubs](planning-hub-sites) |
+| Limited number and access to subject matter experts | Find subject matter experts and communities of expertise | Instead of relying on finding subject matter experts in siloed organizations, surface expertise in social communities like Viva Engage and Teams. [Learn more about organizing a live event in Viva Engage](https://support.office.com/article/Organize-a-live-event-in-viva-engage-105dd7af-9caf-4a5e-8a44-56d203e96551) |
+
+## Moving in the modern direction
+
+Understand that your intranet is an ever-evolving component of your business that will need to grow and scale alongside your organization. Focus on incorporating modern changes that will have the greatest impact to your business first. [Plan and schedule](/en-us/sharepoint/intranet-get-started) when changes will be incorporated and how you will track progress. Use site analytics to understand user behavior and collect feedback from users along the way.
+
+Signals your intranet is moving in the modern direction:
+
+- It's where you start your workday
+- It's always with you
+- Promotes collaboration
+- It makes your job easier
+- Everything is in one place
+
+Signals your organization can benefit from modern:
+
+- Currently sharing documents in shared folders on a server
+- It's difficult to be productive on-the-go
+- Your business is growing faster than you can keep up with
+- Unmanageable volume of emails
+- Your organization has offices in multiple locations
+
+## More modern resources
+
+[Modern inspiration in the SharePoint Look Book](https://adoption.microsoft.com/sharepoint-look-book)
+
+[Information architecture in modern SharePoint](information-architecture-modern-experience)
+
+[Modernize your classic SharePoint sites](/en-us/sharepoint/dev/transform/modernize-classic-sites)
+
+[Modernize your classic SharePoint pages](/en-us/sharepoint/dev/transform/modernize-userinterface-site-pages)
+
+[SharePoint modernization scanner](/en-us/sharepoint/dev/transform/modernize-scanner)
