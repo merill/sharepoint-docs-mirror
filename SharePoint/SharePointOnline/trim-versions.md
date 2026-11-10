@@ -11,7 +11,7 @@ ms.reviewer: rekamath
 ms.author: ruihu
 author: maggierui
 manager: jtremper
-ms.date: 2026-07-27T00:00:00.0000000Z
+ms.date: 2026-10-30T00:00:00.0000000Z
 audience: Admin
 f1.keywords:
 - NOCSH
@@ -58,9 +58,9 @@ Learn how to reduce version storage consumption by analyzing, managing, and trim
 
 Caution
 
-Versions deleted using trimming jobs are permanently deleted. This deletion workflow bypasses the normal recycle bin retention and deleted versions cannot be recovered, unless the data was previously backed up using [Microsoft 365 Backup](/en-us/microsoft-365/backup/backup-overview?view=o365-worldwide&amp;preserve-view=true) or a similar backup solution. To prevent unwanted data loss, we highly recommend to [run a What-If analysis](tutorial-run-what-if-analysis) before trimming activity.
+Versions deleted by using trimming jobs are permanently deleted. This deletion workflow bypasses the normal recycle bin retention, and deleted versions can't be recovered unless the data was previously backed up by using [Microsoft 365 Backup](/en-us/microsoft-365/backup/backup-overview?view=o365-worldwide&amp;preserve-view=true) or a similar backup solution. To prevent unwanted data loss, run a [What-if analysis](tutorial-run-what-if-analysis) before trimming activity.
 
-As a Global Administrator or SharePoint Administrator in Microsoft 365, you can queue a job to trim existing versions to reduce the version storage footprint across your organization. Trimming can be applied at different scopes:
+As a SharePoint Administrator in Microsoft 365, you can queue a job to trim existing versions to reduce the version storage footprint across your organization. Trimming can be applied at different scopes:
 
 - **Site, library, or OneDrive level** — Target specific sites, document libraries, or OneDrive user accounts.
 - **Tenant level** — Apply your tenant-level version policy across all sites in one operation.
@@ -74,19 +74,19 @@ You can queue a job to trim existing versions on a site, library, or OneDrive us
 | **Phase** | **Recommended Actions** |
 | --- | --- |
 | Prepare | **Evaluate your recovery objectives and target version storage use:** Determine the right trim mode and trim scope that you need to meet your organization's recovery objectives. **Review Impact:** Before committing to trim existing versions, you have the option to review the impact of the purge action by running a 'What-if' analysis operation of the selected trim mode on the specified scope. |
-| Queue Job | Once you're ready to commit to a trim job, you can queue a version trimming job to asynchronously delete versions matching the criteria specified in the trim mode within a site, library, or OneDrive user account. |
-| Track Progress | You can track the progress of all queued jobs to review the progress made in trimming versions. |
+| Queue Job | Once you're ready to commit to a trim job, queue a version trimming job to asynchronously delete versions that match the criteria specified in the trim mode within a site, library, or OneDrive user account. |
+| Track Progress | Track the progress of all queued jobs to review the progress made in trimming versions. |
 
 Note
 
-Trim jobs are background jobs that are influenced by factors such as the volume of file versions to be evaluated, service health, and other jobs being processed on the farm. They are also subject to off-peak hour processing logic. The progress of a trim job can always be tracked.
+Trim jobs are background jobs that factors such as the volume of file versions to evaluate, service health, and other jobs being processed on the farm influence. They're also subject to off-peak hour processing logic. You can always track the progress of a trim job.
 
-### Review impact by running 'What-if' analysis
+### Review impact by running What-if analysis
 
-Before committing to trim existing versions, you can review the impact of the purge action by running a 'What-if' analysis operation. Running a 'What-if' operation follows these steps:
+Before you trim existing versions, review the impact of the purge action by running a What-if analysis operation. Running a What-if operation follows these steps:
 
-- **Generate a version storage usage report for a site or library**: This report supports multiple uses, including version storage analytics and gaining key insights on the impact of applying different trimming settings.
-- **Run 'What-If' analysis** by setting different trimming modes to preview the changes and analyze the storage savings impact of applying one of the trimming modes to the version storage report CSV file.
+- **Generate a version storage usage report for a site or library**: Use this report for version storage analytics and to understand the impact of different trimming settings.
+- **Run What-if analysis**: Set different trimming modes to preview the changes and analyze the storage savings impact of applying one of the trimming modes to the version storage report CSV file.
 
 Important
 
@@ -98,13 +98,13 @@ Version trimming workflows allow you to select and apply one of the trimming mod
 
 #### Automatic trim mode (recommended)
 
-The automatic trim mode applies the Automatic algorithm to delete existing versions. Depending on the version age, the job will permanently delete versions or set expiration time according to the automatic version storage algorithm.
+The automatic trim mode applies the Automatic algorithm to delete existing versions. Depending on the version age, the job permanently deletes versions or sets expiration time according to the automatic version storage algorithm.
 
 To learn more about automatic trim mode, see [Understand version storage under Automatic limits](/en-us/sharepoint/plan-version-storage#understand-version-storage-under-automatic-limits).
 
 #### Manual expiration trim mode
 
-The manual expiration trim mode evaluates the age of versions and deletes versions matching the expiration criteria.
+The manual expiration trim mode evaluates the age of versions and deletes versions that match the expiration criteria.
 
 **Example:** In the following example, a trim job is queued to trim versions older than 60 days. On August 31, the job is picked up and it starts permanently deleting versions older than 60 days as of August 31.
 
@@ -112,12 +112,12 @@ Important
 
 **Known limitations of manual expiration trim mode:**
 
-1. The manual expiration trim mode doesn't delete versions created in the last 30 days. This means your input can't be less than 30 days.
-2. The manual expiration trim mode always deletes all versions that were created before January 1, 2023. If you want to trim versions, you can't keep any older versions created before January 1, 2023. This means the value you use for the `DeleteBeforeDays` parameter should result in a date after January 1, 2023.
+- The manual expiration trim mode doesn't delete versions created in the last 30 days. This limitation means your input can't be less than 30 days.
+- The manual expiration trim mode always deletes all versions that were created before January 1, 2023. If you want to trim versions, you can't keep any older versions created before January 1, 2023. This limitation means the value you use for the `DeleteBeforeDays` parameter should result in a date after January 1, 2023.
 
 #### Manual count limit trim mode
 
-The manual count limit trim mode deletes the oldest versions exceeding the specified count limit.
+The manual count limit trim mode deletes the oldest versions that exceed the specified count limit.
 
 **Example:** In the following example, a trim job is queued to delete versions that exceed 50 major version counts. On August 31, the job starts permanently deleting older versions that exceed the 50 major version count limit as of August 31.
 
@@ -127,26 +127,26 @@ You can run the impact analysis of either applying the Manual Count, Expire, or 
 
 ### Queue trim job and track progress
 
-The version trimming workflow uses a job to asynchronously delete versions matching the criteria specified in the trim mode.
+The version trimming workflow uses a job to asynchronously delete versions that match the criteria you specify in the trim mode.
 
-To queue the trim job, you need to determine the scope for version deletion and the trim mode to set the criteria for existing version deletion. You can delete old file versions based on version age, count limits, or automatic algorithm for all document libraries in a site or for a specific document library.
+To queue the trim job, determine the scope for version deletion and choose the trim mode to set the criteria for deleting existing versions. You can delete old file versions based on version age, count limits, or an automatic algorithm for all document libraries in a site or for a specific document library.
 
-Once you're ready to commit to the trim, you can queue the job to asynchronously delete versions matching the trim mode criteria. You'll be able to monitor the progress of committed trim jobs to keep track of the deletion progress.
+When you're ready to trim, queue the job to asynchronously delete versions that match the trim mode criteria. You can monitor the progress of committed trim jobs to keep track of the deletion progress.
 
 Note
 
 To learn more about how version trimming works on versions that are subject to a retention policy or an eDiscovery hold, see [FAQs](/en-us/sharepoint/faqs-for-versions).
 
-### Trim existing versions using PowerShell
+### Trim existing versions by using PowerShell
 
-Follow these steps to trim existing versions using PowerShell.
+Follow these steps to trim existing versions by using PowerShell.
 
 1. [Download the latest SharePoint Online Management Shell](https://go.microsoft.com/fwlink/p/?LinkId=255251).
 
     Note
 
-    If you installed a previous version of the SharePoint Online Management Shell, go to Add or Remove programs and uninstall **SharePoint Online Management Shell**.
-2. Connect to SharePoint as a [Global Administrator or SharePoint Administrator](/en-us/sharepoint/sharepoint-admin-role) in Microsoft 365. To learn how, see [Getting started with SharePoint Online Management Shell](/en-us/powershell/sharepoint/sharepoint-online/connect-sharepoint-online).
+    If you installed a previous version of the SharePoint Online Management Shell, go to **Add or Remove programs** and uninstall **SharePoint Online Management Shell**.
+2. Connect to SharePoint as a [SharePoint Administrator](/en-us/sharepoint/sharepoint-admin-role) in Microsoft 365. To learn how, see [Getting started with SharePoint Online Management Shell](/en-us/powershell/sharepoint/sharepoint-online/connect-sharepoint-online).
 3. Run one of the following commands to trim the existing versions:
 
     | **Action** | **PowerShell Command** |
@@ -163,7 +163,7 @@ Follow these steps to trim existing versions using PowerShell.
 
 Note
 
-Tenant-level version trimming is currently in private preview. This feature may change based on feedback, including the addition of throttling limits on the number of jobs you can run within a specific time period.
+Tenant-level version trimming is currently in public preview. This feature might change based on feedback, including the addition of throttling limits on the number of jobs you can run within a specific time period.
 
 Tenant admins can use tenant-level operations to start a file version trimming job across all sites in a tenant, update document library version policies to match the tenant policy, and estimate the storage impact of trimming by using what-if analysis.
 
@@ -173,32 +173,33 @@ Tenant-level file version trimming cmdlets let you:
 - Trim existing versions based on that policy.
 - Track progress and delete the tenant-level job.
 
-To help you understand trimming impact, additional cmdlets let you run fast, synchronous what-if analysis queries after an initial asynchronous data collection job.
+To help you understand trimming impact, use additional cmdlets to run fast, synchronous what-if analysis queries after an initial asynchronous data collection job.
 
 Caution
 
-Versions deleted using trimming jobs are permanently deleted. This deletion workflow bypasses the normal recycle bin retention and deleted versions cannot be recovered, unless the data was previously backed up using [Microsoft 365 Backup](/en-us/microsoft-365/backup/backup-overview?view=o365-worldwide&amp;preserve-view=true) or a similar backup solution.
+Versions you delete by using trimming jobs are permanently deleted. This deletion workflow bypasses the normal recycle bin retention, and deleted versions can't be recovered unless the data was previously backed up by using [Microsoft 365 Backup](/en-us/microsoft-365/backup/backup-overview?view=o365-worldwide&amp;preserve-view=true) or a similar backup solution.
 
 ### Prerequisites and limitations
 
 - Requires a **SharePoint Advanced Management license** or **Copilot license**.
 - Only **one job is allowed per tenant** at a time.
 - The following site types are excluded from processing:
+
     - Read-only sites
     - Locked sites
     - Archived sites
     - Sites with version policy broken inheritance
-- If the tenant-level version policy changes while the job is in progress, the job applies the updated policy to remaining unprocessed sites. Sites already processed are not re-evaluated.
+- If the tenant-level version policy changes while the job is in progress, the job applies the updated policy to remaining unprocessed sites. Sites already processed aren't re-evaluated.
 - The tenant-level trim uses the version policy configured at the tenant level (Automatic, Manual Expiration, or Manual Count Limit). To understand these trim modes, see Version trim modes above.
 - The what-if analysis returns impact data for both **SharePoint sites** and **OneDrive accounts**.
-- If your tenant is **Multi-Geo**, the what-if analysis and version trimming must be run separately for each geo location.
+- If your tenant is **Multi-Geo**, run the what-if analysis and version trimming separately for each geo location.
 
 ### Recommended workflow
 
 #### 1. Prerequisites
 
 1. [Download the latest SharePoint Online Management Shell](https://go.microsoft.com/fwlink/p/?LinkId=255251).
-2. Connect to SharePoint as a [Global Administrator or SharePoint Administrator](/en-us/sharepoint/sharepoint-admin-role) in Microsoft 365. To learn how, see [Getting started with SharePoint Online Management Shell](/en-us/powershell/sharepoint/sharepoint-online/connect-sharepoint-online).
+2. Connect to SharePoint as a [SharePoint Administrator](/en-us/sharepoint/sharepoint-admin-role) in Microsoft 365. To learn how, see [Getting started with SharePoint Online Management Shell](/en-us/powershell/sharepoint/sharepoint-online/connect-sharepoint-online).
 3. Confirm your tenant-level version policy by running:
 
     ```powershell
@@ -230,9 +231,13 @@ Before committing to a trim, you can estimate the impact of your tenant version 
     You can run multiple what-if queries with different policy options using `Get-SPOVersionPolicyWithChanges` to create modified policy objects for comparison.
 4. Review the projected impact and choose a desired version policy.
 
+    Note
+
+    The projected impact includes both **SharePoint sites** and **OneDrive accounts**.
+
 #### 3. Trim existing versions and update document library policies
 
-Once you've confirmed your tenant version policy and reviewed the projected impact:
+Once you confirm your tenant version policy and review the projected impact:
 
 1. **Run the trim job** with desired options:
 
@@ -263,7 +268,7 @@ Once you've confirmed your tenant version policy and reviewed the projected impa
 
     Note
 
-    Once the cmdlet executes successfully, all new asynchronous version deletion is stopped. Canceling a trim job does not impact versions that were permanently deleted while the job was in progress.
+    Once the cmdlet executes successfully, all new asynchronous version deletion stops. Canceling a trim job doesn't impact versions that were permanently deleted while the job was in progress.
 
 ### Tenant-level PowerShell cmdlet reference
 
@@ -280,17 +285,15 @@ Once you've confirmed your tenant version policy and reviewed the projected impa
 | Get current tenant version policy | `Get-SPOTenantVersionPolicy` | [Get-SPOTenantVersionPolicy](/en-us/powershell/module/microsoft.online.sharepoint.powershell/get-spotenantversionpolicy?view=sharepoint-ps&amp;preserve-view=true) |
 | Create a modified policy object locally | `Get-SPOVersionPolicyWithChanges` | [Get-SPOVersionPolicyWithChanges](/en-us/powershell/module/microsoft.online.sharepoint.powershell/get-spoversionpolicywithchanges?view=sharepoint-ps&amp;preserve-view=true) |
 
-## Learn more
-
-For more information, check out the following resources:
+## Related information
 
 - [Tutorial: Generate Version Usage Report](tutorial-generate-version-usage-report)
 - [Tutorial: Run 'What-If' analysis](tutorial-run-what-if-analysis)
 - [Tutorial: Queue Trim Job](tutorial-queue-a-trim-job)
 - [File Type Version Limits](file-type-version-limits)
-- Start a version settings sync and trim request for existing document libraries on a site using [New-SPOSiteManageVersionPolicyJob](/en-us/powershell/module/microsoft.online.sharepoint.powershell/new-spositemanageversionpolicyjob?view=sharepoint-ps&amp;preserve-view=true)
-- Track progress of version settings sync and trim request for existing document libraries on a site using [Get-SPOSiteManageVersionPolicyJobProgress](/en-us/powershell/module/microsoft.online.sharepoint.powershell/get-spositemanageversionpolicyjobprogress?view=sharepoint-ps&amp;preserve-view=true)
-- Cancel further processing of version settings sync and trim on existing document libraries on the site using [Remove-SPOSiteManageVersionPolicyJob](/en-us/powershell/module/microsoft.online.sharepoint.powershell/remove-spositemanageversionpolicyjob?view=sharepoint-ps&amp;preserve-view=true)
-- Start a version trim request for a document library using [New-SPOListFileVersionBatchDeleteJob](/en-us/powershell/module/microsoft.online.sharepoint.powershell/new-spolistfileversionbatchdeletejob?view=sharepoint-ps&amp;preserve-view=true)
-- Track progress of a version trim request for a document library using [Get-SPOListFileVersionBatchDeleteJobProgress](/en-us/powershell/module/microsoft.online.sharepoint.powershell/get-spolistfileversionbatchdeletejobprogress?view=sharepoint-ps&amp;preserve-view=true)
-- Cancel further processing of a version trim for a document library using [Remove-SPOListFileVersionBatchDeleteJob](/en-us/powershell/module/microsoft.online.sharepoint.powershell/remove-spolistfileversionbatchdeletejob?view=sharepoint-ps&amp;preserve-view=true)
+- Start a version settings sync and trim request for existing document libraries on a site by using [New-SPOSiteManageVersionPolicyJob](/en-us/powershell/module/microsoft.online.sharepoint.powershell/new-spositemanageversionpolicyjob?view=sharepoint-ps&amp;preserve-view=true).
+- Track progress of version settings sync and trim request for existing document libraries on a site by using [Get-SPOSiteManageVersionPolicyJobProgress](/en-us/powershell/module/microsoft.online.sharepoint.powershell/get-spositemanageversionpolicyjobprogress?view=sharepoint-ps&amp;preserve-view=true).
+- Cancel further processing of version settings sync and trim on existing document libraries on the site by using [Remove-SPOSiteManageVersionPolicyJob](/en-us/powershell/module/microsoft.online.sharepoint.powershell/remove-spositemanageversionpolicyjob?view=sharepoint-ps&amp;preserve-view=true).
+- Start a version trim request for a document library by using [New-SPOListFileVersionBatchDeleteJob](/en-us/powershell/module/microsoft.online.sharepoint.powershell/new-spolistfileversionbatchdeletejob?view=sharepoint-ps&amp;preserve-view=true).
+- Track progress of a version trim request for a document library by using [Get-SPOListFileVersionBatchDeleteJobProgress](/en-us/powershell/module/microsoft.online.sharepoint.powershell/get-spolistfileversionbatchdeletejobprogress?view=sharepoint-ps&amp;preserve-view=true).
+- Cancel further processing of a version trim for a document library by using [Remove-SPOListFileVersionBatchDeleteJob](/en-us/powershell/module/microsoft.online.sharepoint.powershell/remove-spolistfileversionbatchdeletejob?view=sharepoint-ps&amp;preserve-view=true).
