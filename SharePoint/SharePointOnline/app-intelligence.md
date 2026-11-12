@@ -13,8 +13,9 @@ ms.author: kadgoswami
 ms.reviewer: stephkent
 manager: jmcdowe
 ms.service: sharepoint-online
+ms.collection: bap-ai-copilot
 ms.topic: how-to
-ms.date: 2026-11-06T00:00:00.0000000Z
+ms.date: 2026-11-11T00:00:00.0000000Z
 locale: en-us
 document_id: 244b699e-c1fe-1410-ee65-3e7e9202aee4
 document_version_independent_id: 7091d017-2c53-8329-2ffb-dcf5adcf07a5
@@ -44,7 +45,7 @@ platformId: 15ccacfd-9166-37e5-9b6a-b01c37bebf92
 
 # Review application access with App Intelligence - SharePoint in Microsoft 365 | Microsoft Learn
 
-App Intelligence helps SharePoint administrators review how non-Microsoft applications access SharePoint content. It brings together available application permissions, behavior evidence, and resource reach to help you prioritize applications for review and understand what action to take next.
+App Intelligence helps SharePoint administrators review how non-Microsoft applications access SharePoint content. It brings together available application permissions and activity to help you prioritize applications for review and understand why they might need attention.
 
 App Intelligence provides information to support your review. It doesn't determine whether an application is malicious or change the application's permissions.
 
@@ -60,7 +61,7 @@ App Intelligence depends on available assessment data. Activity might not be ava
 2. In the Copilot pane, select **Review priority apps** to identify applications that might need immediate review.
 3. Review the results. An assessment can include the application, likely behavior, sites reached, resource impact, reasons for review, and the assessment window, depending on the available data.
 
-[![Screenshot of the App Intelligence preview showing a Copilot response with priority applications, site reach, likely behavior, and resource impact.](sharepointonline/learn-article-assets/priority-apps-v2.png)](sharepointonline/learn-article-assets/priority-apps-v2.png#lightbox)
+[![Screenshot of the App Intelligence preview showing a Copilot response with priority applications, site reach, likely behavior, and resource impact.](sharepointonline/media/app-intelligence/priority-apps-v2.png)](sharepointonline/media/app-intelligence/priority-apps-v2.png#lightbox)
 
 ### Assess privileged access
 
@@ -75,11 +76,13 @@ Privileged-access results are based on available SharePoint and OneDrive access 
 - Effective reach (for example, sites reached and sensitive sites reached)
 - Available activity evidence in the assessment window
 
-[![Screenshot of the App Intelligence preview showing applications with broad permissions, access models, sites reached, and evidence modes.](sharepointonline/learn-article-assets/privileged-access-v2.png)](sharepointonline/learn-article-assets/privileged-access-v2.png#lightbox)
+[![Screenshot of the App Intelligence preview showing applications with broad permissions, access models, sites reached, and evidence modes.](sharepointonline/media/app-intelligence/privileged-access-v2.png)](sharepointonline/media/app-intelligence/privileged-access-v2.png#lightbox)
 
 ### Understand why an application needs review
 
 To investigate a result, ask why the application needs review or why it has a high resource impact. Check whether each explanation is based on permissions, observed activity, or both. Review the assessment window and data availability before acting.
+
+[![Screenshot of the App Intelligence preview explaining review reasons and distinguishing permission capability from observed activity.](sharepointonline/media/app-intelligence/resource-impact-explanation-v2.png)](sharepointonline/media/app-intelligence/resource-impact-explanation-v2.png#lightbox)
 
 App Intelligence can use different evidence modes:
 
@@ -87,7 +90,7 @@ App Intelligence can use different evidence modes:
 - **Observed behavior:** Available activity data indicates what the application did during the stated assessment window. It might not represent all activity.
 - **Mixed:** The explanation uses both permission and activity evidence.
 
-[![Screenshot of the App Intelligence preview explaining the difference between application capability and observed behavior.](sharepointonline/learn-article-assets/evidence-types-v2.png)](sharepointonline/learn-article-assets/evidence-types-v2.png#lightbox)
+[![Screenshot of the App Intelligence preview explaining the difference between application capability and observed behavior.](sharepointonline/media/app-intelligence/evidence-types-v2.png)](sharepointonline/media/app-intelligence/evidence-types-v2.png#lightbox)
 
 ### How App Intelligence prioritizes applications for review
 
@@ -113,43 +116,47 @@ Likely behavior is an interpretation of available evidence, not a verified state
 
 To review exported results, select **View assessment report** and then **Download CSV**. The report can include applications requiring review, likely behavior, permission scope and evidence mode, resource impact, sites reached, assessment reasons, missing data, and the assessment window.
 
-[![Screenshot of the App Intelligence preview showing an assessment report and a Download CSV action.](sharepointonline/learn-article-assets/export-assessment-v2.png)](sharepointonline/learn-article-assets/export-assessment-v2.png#lightbox)
-
-## Actions
-
-After you review the assessment results, you can take follow-up actions.
+[![Screenshot of the App Intelligence preview showing an assessment report and a Download CSV action.](sharepointonline/media/app-intelligence/export-assessment-v2.png)](sharepointonline/media/app-intelligence/export-assessment-v2.png#lightbox)
 
 ### Notify app owners
 
-Use **Notify app owners** when you need business confirmation before making a governance decision.
+To notify owners of flagged applications during review:
 
-1. Select one or more applications that require owner validation.
-2. Select **Notify app owners**.
-3. Review the resolved recipients and message.
-4. Select **Send**.
+1. Run **Review priority apps** and confirm the apps that require follow-up.
+2. Select **Notify App Owner** and choose which flagged apps to include.
+3. Open the generated notification preview link, review the owner-email draft, and then send.
 
-App Intelligence uses owner information available in Microsoft Entra. If owner contact details aren't available, App Intelligence doesn't guess recipients.
+[![Screenshot of the App Intelligence owner-email preview pane showing the draft message and selected app owners before sending.](sharepointonline/media/app-intelligence/notify-app-owners-side-pane.png)](sharepointonline/media/app-intelligence/notify-app-owners-side-pane.png#lightbox)
 
-Sending a notification requests validation only. It doesn't automatically change, restrict, or revoke application access.
+The notification flow keeps the message in preview until an administrator confirms send.
 
-### App restrictions
-
-Use **App restrictions** when you decide an app should have reduced access to SharePoint content.
-
-1. Select one or more applications.
-2. Select **App restrictions**.
-3. Review the app list, policy scope, and expected impact.
-4. Confirm the restriction action by using the supported restriction workflow in SharePoint.
-
-App restrictions are an explicit administrator action. App Intelligence doesn't apply restrictions automatically as part of assessment or notification.
+Use the preview to verify recipients, subject, and app list before sending owner communication.
 
 ## Data and coverage
 
-App Intelligence relies on available SharePoint application-access information. The existing App Insights reports use audit data for `FileAccessed`, `FileDownloaded`, `FileModified`, and `FileUploaded` events. They don't include every audit event. Data collection and reporting delays can affect what is available.
+App Intelligence relies on available SharePoint application-access information. The existing App Insights reports use audit data for `FileAccessed`, `FileDownloaded`, `FileModified`, and `FileUploaded` events; they don't include every audit event. Data collection and reporting delays can affect what is available.
 
-The assessment window shown in the experience defines the period covered by a result. An absence of activity in that window doesn't establish that an application never accessed content.
+The assessment window shown in the experience defines the period covered by a result. An absence of activity in that window doesn't establish that an application has never accessed content.
 
-For more information about the existing report workflow, see [Generate App Insights reports](app-insights).
+### App restrictions
+
+Use app restrictions when you decide an application should have reduced access to SharePoint content.
+
+To restrict an application's access, follow your organization's administrator procedures and use the supported Restricted Access Control (RAC) for Apps PowerShell commands.
+
+Relevant PowerShell commands:
+
+1. `Set-SPOTenantRestrictedAppAccessControlList`: Add or remove application IDs from the restricted app list.
+2. `Enable-SPOTenantRestrictedAppAccessControl`: Enable tenant-level Restricted Access Control.
+3. `Get-SPOTenantRestrictedAppAccessControl`: Check the current Restricted Access Control state.
+
+Important
+
+Enabling Restricted Access Control is a tenant-wide change. Review the expected impact before applying restrictions.
+
+App restrictions require explicit administrator action. App Intelligence doesn't automatically apply restrictions as part of assessment or notification.
+
+To learn more about the existing report workflow, go to [Generate Enterprise App Insights reports](app-insights).
 
 ## App Intelligence FAQ
 
@@ -163,7 +170,7 @@ No. It indicates that the available evidence might warrant closer review. Consid
 
 ### Why can an app be prioritized when activity appears limited?
 
-Priority can be driven by permission capability and effective reach, not only observed activity. If activity evidence is limited or unavailable, App Intelligence can still surface the app for review and indicate capability-only or incomplete evidence.
+Priority can come from permission capability and effective reach, not just observed activity. If activity evidence is limited or unavailable, App Intelligence can still surface the app for review and indicate capability-only or incomplete evidence.
 
 ### Does privileged access mean the app is malicious?
 
@@ -175,7 +182,7 @@ No. Resource impact is an explainable assessment level (**High**, **Medium**, **
 
 ### Is App Intelligence enforcement?
 
-No. App Intelligence is advisory. It helps administrators understand available evidence and prioritize review actions; policy and access decisions still require administrator judgment.
+No. App Intelligence is advisory. It helps administrators understand available evidence and prioritize review actions. Policy and access decisions still require administrator judgment.
 
 ### Does App Intelligence change application permissions?
 
@@ -183,4 +190,4 @@ No. App Intelligence helps you review available evidence. It doesn't change appl
 
 ### What if activity or other information is missing?
 
-The assessment can be limited by unavailable or stale data. Treat **Needs Data** as a reason to investigate further, not as proof that there was no activity or that the application is unsafe.
+The assessment can be limited by unavailable or stale data. Treat **Needs Data** or **Needs Review** as a reason to investigate further, not as proof that there was no activity or that the application is unsafe.
