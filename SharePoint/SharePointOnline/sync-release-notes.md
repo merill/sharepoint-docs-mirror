@@ -13,7 +13,7 @@ ms.author: kangan
 manager: gacarini
 ms.service: onedrive
 ms.topic: release-notes
-ms.date: 2026-10-30T00:00:00.0000000Z
+ms.date: 2026-11-12T00:00:00.0000000Z
 locale: en-us
 document_id: dfd91433-e4bc-7aa9-a32e-edca3183815c
 document_version_independent_id: 9865c764-d912-b7db-cf91-299ad8e2a71f
@@ -56,19 +56,30 @@ The OneDrive sync app requires Windows 10 22H2 or Windows 11 to receive updates.
 
 | Ring | Released | Rolling Out |
 | --- | --- | --- |
-| Production | 26.195.1006.0007 ([amd64](https://go.microsoft.com/fwlink/?linkid=844652) | [arm64](https://go.microsoft.com/fwlink/?linkid=2359340)) | 26.198.1011.0006 ([amd64](https://go.microsoft.com/fwlink/?linkid=860984) | [arm64](https://go.microsoft.com/fwlink/?linkid=2359137)) |
+| Production | 26.198.1011.0006 ([amd64](https://go.microsoft.com/fwlink/?linkid=844652) | [arm64](https://go.microsoft.com/fwlink/?linkid=2359340)) | 26.204.1019.0007 ([amd64](https://go.microsoft.com/fwlink/?linkid=860984) | [arm64](https://go.microsoft.com/fwlink/?linkid=2359137)) |
 | Deferred | 26.123.0628.0001 ([amd64](https://go.microsoft.com/fwlink/?linkid=860987) | [arm64](https://go.microsoft.com/fwlink/?linkid=2359341)) | 26.189.0928.0009 ([amd64](https://oneclient.sfx.ms/Win/Installers/26.189.0928.0009/amd64/OneDriveSetup.exe) | [arm64](https://oneclient.sfx.ms/Win/Installers/26.189.0928.0009/arm64/OneDriveSetup.exe)) *Target Date: Nov 12, 2026* |
 
 **What's New**
 
 - We resolved product issues to improve the reliability and performance of the OneDrive sync app.
+- **Improved sync behavior during Game Mode:** When Windows Game Mode is on, OneDrive pauses syncing to reduce background activity during gameplay. Syncing resumes automatically when Game Mode ends. (Version 26.189.0928.0007)
 - **Copy links from Activity Center:** Users can now copy a link to a file directly from the per-item menu for recently synced files in the OneDrive Activity Center. (Version 26.150.0804.0010)
 - **Browse your photos in OneDrive:** OneDrive now brings the photos experience from OneDrive on the web and mobile to your desktop, so you can browse, search, and organize photos from your OneDrive and your PC in one place. Available for personal Microsoft accounts. Select **View photos** in the OneDrive activity center to open it. [Learn more](https://support.microsoft.com/onedrive/windows/browse-your-photos-on-windows) (Version 26.123.0628.0001)
 - **Improved max path handling for OneDrive shortcuts:** OneDrive now uses the correct root path when checking Folder Shortcuts against the maximum path length, so fewer files are incorrectly flagged as exceeding the limit. (Version 26.119.0622.0003)
-- **Clearer sync status messages:** OneDrive sync status messages in File Explorer, the Windows notification area, and the OneDrive Activity Center are now clearer and more consistent. We removed outdated status strings and refreshed key states, so "Your files are synced" and "Up to date" now read "Backed up and synced." (Version 26.074.0420.0001)
-- **Move folders to OneDrive from File Explorer:** Right-click any folder in File Explorer to move it directly to OneDrive, making it easier to back up and sync local folders. (Version 26.045.0308.0003)
 
 ## Windows Production Ring
+
+#### 26.204.1019.0007 (November 12, 2026)
+
+- We resolved product issues to improve the reliability and performance of the OneDrive sync app.
+
+#### 26.204.1019.0006 (November 9, 2026)
+
+- We resolved product issues to improve the reliability and performance of the OneDrive sync app.
+
+#### 26.204.1019.0004 (November 6, 2026)
+
+- We resolved product issues to improve the reliability and performance of the OneDrive sync app.
 
 #### 26.198.1011.0006 (October 30, 2026)
 
@@ -85,6 +96,8 @@ The OneDrive sync app requires Windows 10 22H2 or Windows 11 to receive updates.
 #### 26.189.0928.0007 (October 16, 2026)
 
 - We resolved product issues to improve the reliability and performance of the OneDrive sync app.
+- New features gradually rolling out:
+    - **Improved sync behavior during Game Mode:** When Windows Game Mode is on, OneDrive pauses syncing to reduce background activity during gameplay. Syncing resumes automatically when Game Mode ends.
 
 #### 26.183.0920.0005 (October 9, 2026)
 
@@ -512,7 +525,7 @@ The OneDrive sync app requires Windows 10 22H2 or Windows 11 to receive updates.
 
 | Ring | Released | Rolling Out |
 | --- | --- | --- |
-| Production | 26.195.1006.0007 ([universal](https://go.microsoft.com/fwlink/?linkid=823060)) | 26.198.1011.0006 ([universal](https://go.microsoft.com/fwlink/?linkid=861011)) |
+| Production | 26.198.1011.0006 ([universal](https://go.microsoft.com/fwlink/?linkid=823060)) | 26.204.1019.0007 ([universal](https://go.microsoft.com/fwlink/?linkid=861011)) |
 | Deferred | 26.123.0628.0001 ([universal](https://go.microsoft.com/fwlink/?linkid=861009)) | 26.189.0928.0009 ([universal](https://oneclient.sfx.ms/Mac/Installers/26.189.0928.0009/universal/OneDrive.pkg)) *Target Date: Nov 12, 2026* |
 
 **Download:**[Standalone](https://go.microsoft.com/fwlink/?linkid=823060) | [Mac App Store](https://go.microsoft.com/fwlink/p/?LinkId=248255)
@@ -522,11 +535,20 @@ The OneDrive sync app requires Windows 10 22H2 or Windows 11 to receive updates.
 - We resolved product issues to improve the reliability and performance of the OneDrive sync app.
 - **Native Sync Engine:** Files and folders are immediately browsable in Finder without waiting for folder contents to load. Syncing is faster and more reliable while using less CPU, memory, and battery. Files On-Demand remains unchanged: online-only files stay online until opened or marked as Always Keep on This Device. [Learn more](https://techcommunity.microsoft.com/blog/onedriveblog/making-mac-onedrive-faster-and-more-reliable/4516506) (Version 26.189.0928.0007)
 - **Search files in OneDrive Activity Center and Spotlight:** Find locally available and online-only OneDrive files by name or keyword. Eligible personal accounts can also find photos by describing what they show. View results as thumbnails and filter by file type. On macOS 26 or later, type OneDrive in Spotlight, press Tab, and enter a search term. (Version 26.189.0928.0007)
-- **Manage login item registration via command line:** Administrators can register or unregister the OneDrive login item using command-line arguments, enabling programmatic control over auto-start behavior on managed devices. [Learn more](deploy-and-configure-on-macos#manage-login-item-registration-via-command-line) (Version 26.032.0217.0003)
-- **Redesigned Activity Center:** The Activity Center has been rebuilt in SwiftUI with a streamlined interface showing sync status, a compact activity feed with thumbnail previews, and one-click access to errors. On macOS 26 and later, it supports Liquid Glass. [Learn more](https://techcommunity.microsoft.com/blog/onedriveblog/onedrive-on-mac-gets-liquid-glass-with-an-all-new-activity-center/4495501) (Version 26.017.0126.0002)
-- **Copilot Actions in Finder and OneDrive Activity Center:** Users with a Microsoft 365 Copilot license, or a Microsoft 365 Personal, Family, or Premium subscription, can now use Copilot in Finder and the OneDrive Activity Center to summarize documents, generate FAQs, compare files, or get answers about their files saved in OneDrive. (Version 26.007.0112.0002)
 
 ## macOS Production Ring
+
+#### 26.204.1019.0007 (November 12, 2026)
+
+- We resolved product issues to improve the reliability and performance of the OneDrive sync app.
+
+#### 26.204.1019.0006 (November 9, 2026)
+
+- We resolved product issues to improve the reliability and performance of the OneDrive sync app.
+
+#### 26.204.1019.0004 (November 6, 2026)
+
+- We resolved product issues to improve the reliability and performance of the OneDrive sync app.
 
 #### 26.198.1011.0006 (October 30, 2026)
 
