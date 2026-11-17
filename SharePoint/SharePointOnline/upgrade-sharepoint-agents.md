@@ -51,11 +51,11 @@ platformId: cf814acd-eb7a-c0a4-0278-997ce93e6c5a
 
 # Upgrade agents in SharePoint and OneDrive - SharePoint in Microsoft 365 | Microsoft Learn
 
-Learn how to upgrade your agent experiences in SharePoint and OneDrive. By upgrading, your agents can leverage Copilot in SharePoint and all the functionality of the [Microsoft Copilot extensibility ecosystem](/en-us/microsoft-365/copilot/extensibility).
+Learn how to upgrade your agent experiences in SharePoint and OneDrive. By upgrading, your agents can leverage Copilot in SharePoint and all the functionality of the [Microsoft Copilot plugins ecosystem](/en-us/microsoft-365/copilot/extensibility).
 
 ## What is changing?
 
-Microsoft is upgrading the agent experience in SharePoint and OneDrive. Upgrading better aligns your agents with the [Microsoft Copilot extensibility ecosystem](/en-us/microsoft-365/copilot/extensibility), ensuring your agents are part of the [Microsoft Copilot app Home experience](https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/) and the [Microsoft plugin registry](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/introducing-the-plugin-registry---one-place-to-discover-and-govern-plugins-for-m/4559682), the shared catalog for discovering, publishing, and governing organization-approved and custom-built plugins across Microsoft Copilot experiences, Microsoft 365 apps, OneDrive, and SharePoint.
+Microsoft is upgrading the agent experience in SharePoint and OneDrive. Upgrading better aligns your agents with the [Microsoft Copilot plugins ecosystem](/en-us/plugins), ensuring your agents are part of the [Microsoft Copilot app Home experience](https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/) and the [Microsoft plugin registry](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/introducing-the-plugin-registry---one-place-to-discover-and-govern-plugins-for-m/4559682), the shared catalog for discovering, publishing, and governing organization-approved and custom-built plugins across Microsoft Copilot experiences, Microsoft 365 apps, OneDrive, and SharePoint.
 
 Existing agents in the .agent file format will continue to work across SharePoint, Microsoft Teams, and the Copilot app until the end of March 2027. You can start upgrading or moving each experience to a supported path that best fits its purpose now. After March 2027, .agent files will stop responding and you will have to upgrade to continue using them.
 
@@ -68,7 +68,7 @@ The right upgrade path depends on what each agent helps users accomplish today:
 | Provides a customized Q&A, retrieval, or analysis experience | Upgrade the agent with Microsoft Copilot Agent Builder |
 | Is a custom engine agent built in Copilot Studio and published to SharePoint | Publish the existing Copilot Studio agent to Microsoft Copilot app |
 
-Starting in mid-November 2026, you'll use [Microsoft Copilot Agent Builder](/en-us/microsoft-365/copilot/extensibility/agent-builder-build-agents) to create agents for [SharePoint](https://support.microsoft.com/sharepoint/copilot-in-sharepoint/create-an-agent-in-sharepoint) and [OneDrive](https://support.microsoft.com/onedrive/copilot/create-and-use-an-agent-in-onedrive). You can still select SharePoint and OneDrive content as knowledge sources and use a provided prompt to start building a conversational agent. However, creating an agent no longer saves a .agent file in SharePoint or OneDrive. You can edit, share, and monitor your agents through the Copilot app and manage them through [Agent 365](/en-us/microsoft-365/admin/manage/agent-registry).
+Starting in mid-November 2026, you'll use [Microsoft Copilot Agent Builder](/en-us/microsoft-365/copilot/extensibility/agent-builder-build-agents) to create agents for [SharePoint](https://support.microsoft.com/sharepoint/copilot-in-sharepoint/create-an-agent-in-sharepoint) and [OneDrive](https://support.microsoft.com/onedrive/copilot/create-and-use-an-agent-in-onedrive). You can still select SharePoint and OneDrive content as knowledge sources and use a provided prompt to start building a conversational agent. However, creating an agent no longer saves a .agent file in SharePoint or OneDrive. You can edit, share, and monitor your agents through the Copilot app and manage them through [Agent 365](/en-us/microsoft-365/admin/manage/agent-registry). Starting in mid-November 2026, you'll use [Microsoft Copilot Agent Builder](/en-us/microsoft-365/copilot/extensibility/agent-builder-build-agents) to create agents for [SharePoint](https://support.microsoft.com/sharepoint/copilot-in-sharepoint/create-an-agent-in-sharepoint) and [OneDrive](https://support.microsoft.com/onedrive/copilot/create-and-use-an-agent-in-onedrive). You can still select SharePoint and OneDrive content as knowledge sources and use a provided prompt to start building a conversational agent. However, creating an agent no longer saves a .agent file in SharePoint or OneDrive. You can edit, share, and monitor your agents through the Copilot app and manage them through [Agent 365](/en-us/microsoft-365/admin/manage/agent-registry).
 
 ### Are agents in SharePoint and OneDrive being retired?
 
@@ -276,6 +276,7 @@ In SharePoint, you have a few options for finding your agents:
 
     ![Screenshot of the agents you own shown in Build in SharePoint.](sharepointonline/media/upgrade-sharepoint-agents/sp-build-see-agents.png)
 - Use the [agent reports on SharePoint Advanced Management](monitor-agent-usage#use-agent-reports-on-sharepoint-advanced-management) to inventory agents.
+- Use the [agent registry](/en-us/microsoft-365/admin/manage/agent-registry) to see "SharePoint" agents.
 - Use the [agent registry](/en-us/microsoft-365/admin/manage/agent-registry) to see "SharePoint" agents.
 - Use [search](monitor-agent-usage#use-search-to-find-all-agents-for-bulk-actions) to find your agents on the site.
 
