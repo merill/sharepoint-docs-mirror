@@ -1,13 +1,13 @@
 ---
 layout: Conceptual
-title: Set up Viva Connections in the Microsoft 365 admin center - SharePoint in Microsoft 365 | Microsoft Learn
+title: Set up Viva Connections - SharePoint in Microsoft 365 | Microsoft Learn
 canonicalUrl: https://learn.microsoft.com/en-us/sharepoint/homesites/set-up-admin-center
 breadcrumb_path: /sharepoint/breadcrumb/toc.json
 uhfHeaderId: MSDocsHeader-SharePoint
 feedback_system: Standard
 feedback_product_url: https://feedbackportal.microsoft.com/feedback/forum/06735c62-321c-ec11-b6e7-0022481f8472
 recommendations: true
-ms.date: 2025-01-22T00:00:00.0000000Z
+ms.date: 2026-11-16T00:00:00.0000000Z
 ms.reviewer: 
 ms.author: dipadur
 author: divyachapan
@@ -31,7 +31,7 @@ search.appverid:
 - SPO160
 - MET150
 ROBOTS: 
-description: Learn how to set up Viva Connections in the Microsoft 365 admin center and prepare your experience for your organization
+description: Learn how to set up Viva Connections and prepare your experience for your organization
 locale: en-us
 document_id: a015afb5-32b8-67e4-f485-26c4dbc91897
 document_version_independent_id: 7a1cda08-f528-de3d-d176-14e423601799
@@ -51,25 +51,37 @@ source_path: SharePoint/SharePointOnline/homesites/set-up-admin-center.md
 platformId: 1688d008-0544-98cc-fde1-36f9febcf002
 ---
 
-# Set up Viva Connections in the Microsoft 365 admin center - SharePoint in Microsoft 365 | Microsoft Learn
+# Set up Viva Connections - SharePoint in Microsoft 365 | Microsoft Learn
+
+[Microsoft Viva Connections](sharepoint-app-in-teams-overview) is a user experience app in Microsoft Teams that brings together relevant news, conversations, resources, and tools in one place for every person. It's built on your current Microsoft 365 ecosystem to help you engage, inform, and empower your workforce. The Viva Connections experience is deployed and accessed in Microsoft Teams, and each experience is powered by a SharePoint home site.
 
 Note
 
-- You must have an Enterprise (E), Frontline (F), or Academic (A) license type to create a Viva Connections experience.
-- Users with a Microsoft 365 subscription (E, F, or A license) are limited to creating and using one experience. If you want to create or use two or more experiences (up to 50), then every user in your tenant must have a Microsoft Viva Suite or Viva Communications and Communities license. See [Microsoft Viva plans and pricing](https://www.microsoft.com/microsoft-viva/pricing) for more info.
-- You must have SharePoint admin permissions to access the Microsoft 365 admin center.
-- You must have Teams administrator (or higher) permissions to pin the Viva Connections app in the Teams Admin Center.
-- SharePoint home sites that are part of a multi-geo tenant outside of the main geo need to manage their permissions in the SharePoint Admin Center.
+Home site management is moving to the SharePoint admin center. You can now add home sites, assign audiences, set the order of home sites, and remove home sites from SharePoint admin center &gt; Settings &gt; Home sites. Managing Viva Connections experiences in the Microsoft 365 admin center will be retired, so we recommend using the SharePoint admin center going forward. For more information, see Message center post MC1457839.
 
-[Microsoft Viva Connections](sharepoint-app-in-teams-overview) is a user experience app in Microsoft Teams that brings together relevant news, conversations, resources, and tools in one place for every person. It's built on your current Microsoft 365 ecosystem to help you engage, inform, and empower your workforce. The Viva Connections experience is deployed and accessed in Microsoft Teams.
+Use these step-by-step instructions to set up and launch home sites and Viva Connections experiences for your organization using either:
 
-Use these step-by-step instructions to help you set up and launch Viva Connections experiences in the Microsoft admin center (MAC) for your organization.
+- Recommended: Home site management in the SharePoint admin center.
+- Legacy: The Microsoft 365 admin center experience is still available during the transition.
 
-## Before getting started
+Note
 
-Setting up Viva Connections only takes a few steps but there are some considerations to think through with other stakeholders at your organization before getting started:
+SharePoint home sites that are part of a multi-geo tenant outside of the main geo need to manage their permissions in the SharePoint admin center.
 
-- **Consider the type of experience(s) that are best for your organization**: You can create a stand-alone Viva Connections experience, or you can create a Connections experience that also builds off an existing intranet portal or SharePoint home site. You can create a single Connections experience for your entire organization with dashboard cards targeted to specific audiences (that is, Centralized HR communication), or you can create multiple experiences to meet the needs of distinct audiences (for example, separate content for frontline workers, subsidiaries needing separate content and branding, etc.). Keep in mind that if you have multiple experiences with overlapping content, each experience needs to be updated separately. Learn more on how to [plan, build, and launch Viva Connections](sharepoint-app-in-teams-plan).
+## Prerequisites
+
+Before you start, make sure you have:
+
+- SharePoint administrator permissions to manage home sites and Viva Connection experiences.
+- Teams administrator permissions to pin the Viva Connections app in the Teams admin center.
+- An Enterprise (E), Frontline (F), or Academic (A) license type to create a Viva Connections experience. Users with a Microsoft 365 subscription (E, F, or A license) are limited to creating and using one experience.
+- If you want to create or use two or more experiences (up to 50), then every user in your tenant must have a Microsoft Viva Suite or Viva Communications and Communities license. See [Microsoft Viva plans and pricing](https://www.microsoft.com/microsoft-viva/pricing) for more information.
+
+## Prepare for setup
+
+There are some considerations to think through with other stakeholders at your organization before setting up Viva Connections:
+
+- **Consider the type of experience(s) that are best for your organization**: You can create a stand-alone Viva Connections experience, or you can create a Connections experience that also builds off an existing intranet portal or SharePoint home site. You can create a single Connections experience for your entire organization with dashboard cards targeted to specific audiences (that is, Centralized HR communication), or you can create multiple experiences to meet the needs of distinct audiences (for example, separate content for frontline workers or subsidiaries needing separate content and branding). Keep in mind that if you have multiple experiences with overlapping content, each experience needs to be updated separately. Learn more on how to [plan, build, and launch Viva Connections](sharepoint-app-in-teams-plan).
 - **Decide which audiences should be associated with each experience**: You can create more than one Connections experience if your organization has a need for different user experiences for distinct audiences. Decide which experiences should be associated with specific audiences. You want to consider the [order of experiences](set-up-admin-center#step-4-decide-the-order) that should be seen for audiences that might belong to more than one experience.
 - **Think about who should have owner permissions to each experience**: [Owners have full permissions to edit the experience](edit-sharepoint-app-in-teams) and manage access for others. As a best practice, it’s recommended that each experience has a minimum of two owners assigned to it.
 - **Pick an icon and name for your app**: Choose an app icon and name to apply to your entire Connections app. This icon and label display as an app in the Teams app bar. Consider what the right branding elements are for your organization. You want to pick a name that aligns with your organization’s brand, and that’s also meaningful and recognizable to viewers.
@@ -78,9 +90,104 @@ Note
 
 Currently the app icon and name can be managed only at a tenant level. Organizations with multiple experiences won't see individual names and icons for each one in Teams.
 
+## Manage home sites in the SharePoint admin center
+
+You can create and manage multiple home sites in the SharePoint admin center. If you already set up Viva Connections experiences in the Microsoft 365 admin center, your existing home sites, audiences, and order appear in the SharePoint admin center automatically. You don't need to do anything to move them.
+
+### Go to home sites
+
+1. Sign in to the SharePoint admin center as a SharePoint admin or higher.
+2. Select **Settings**, and then select **Home sites**.
+
+The home sites list shows each home site, numbered in priority order, with its URL. If you don't have a home site yet, select **Add a Home site** to get started.
+
+### Add a home site
+
+You can create a new site from the home site template, or use an existing communication site.
+
+#### Option 1: Create a new site
+
+1. Select **Add**, and then select **Create a new site**.
+2. Preview the **Home site** template, and then select **Use template**. The template includes a home page with dashboard, news, and resources, global navigation, and the SharePoint app experience in Teams desktop and mobile.
+3. Enter a site name, an optional description, the site address, and the site owner. The site address is filled in from the site name, and you're added as the site owner by default.
+4. Choose the default language and time zone.
+5. Select **Create site**.
+
+#### Option 2: Use an existing communication site
+
+1. Select **Add**, and then select **Use an existing communication site**.
+2. Enter the URL of the communication site.
+3. When the message **This site can be set as your Home site** appears, select **Save**.
+
+New home sites are added to the bottom of the list. Each home site in the list is numbered to show its order.
+
+### Assign owners and permissions
+
+Assign two or more owners to each home site so they have full access to edit the site and manage permissions for others.
+
+1. In the SharePoint admin center, select **Sites** &gt; **Active sites**, and then select the home site.
+2. Select the **Membership** tab.
+3. Add site owners, and add members and visitors as needed.
+
+Important
+
+Assigning an audience doesn't grant access to a home site. Site permissions control who can access the site. Make sure the people you target with an audience also have at least visitor permissions to the site.
+
+### Assign an audience
+
+Decide which Microsoft Entra security groups or Microsoft 365 groups should be associated with each home site. The audience determines which home site people see by default when they open Viva Connections in Teams.
+
+1. In **Settings** &gt; **Home sites**, select the home site.
+2. Select the three dots menu (**…**), and then select **Edit audience**.
+3. Choose one of the following options:
+
+    - **Everyone in the organization** to show this home site to everyone.
+    - **Scope down the audience for this home site**, and then filter by group, by license type, or both.
+4. Select **Save**.
+
+**Filter by group:** Search for and select one or more Microsoft Entra security groups or Microsoft 365 groups.
+
+**Filter by license type:** Choose everyone, frontline workers, or non-frontline workers.
+
+If you filter by both group and license type, only people who belong to the group and also have the selected license type are included.
+
+For example: Contoso Retail wants to target all sales frontline workers for a specific home site, but its *Contoso Sales All* group also includes sales directors who aren't frontline workers. By selecting the *Contoso Sales All* group and the frontline worker license filter, the home site is targeted only to members of that group who are also frontline workers.
+
+### Change the order of home sites
+
+If your organization has multiple home sites, some people might belong to the audience of more than one. The order determines which home site they see by default: the highest-ordered home site that matches their audience.
+
+Order home sites from the most specific audience to the broadest. This way, smaller audiences see their tailored home site instead of the one meant for everyone.
+
+1. In **Settings** &gt; **Home sites**, select **Change order**.
+2. Drag home sites into the order you want.
+3. Select **Save**.
+
+**Example:** An organization has two home sites. *Contoso 123* is scoped to members of the *CM (Contoso Members)* group, and *comm1* is targeted to everyone. Because CM members belong to both audiences, *Contoso 123* should be ordered above *comm1* so those members see their tailored home site. If the organization later adds another home site for a smaller audience, it should reorder the list again so the most specific home site comes first.
+
+### Remove a home site
+
+Removing a home site doesn't delete the site or its content. The site remains available as a regular communication site under **Sites** &gt; **Active sites**.
+
+1. In **Settings** &gt; **Home sites**, select the three dots menu (**…**) for a home site.
+2. Select **Remove** **as home site**. A confirmation panel opens.
+3. Confirm the removal.
+
+The remaining home sites keep their audiences and order. People whose default was the removed home site see the next home site in the order that matches their audience.
+
+Note
+
+Changes to audiences, order, and home sites can take up to 24 hours to take effect for users. Consider this timing when you plan changes.
+
 ## How to access Viva Connections in the Microsoft admin center
 
-1. Navigate to [admin.microsoft.com](https://admin.microsoft.com/Adminportal/Home#/homepage) and sign in with your credentials.
+## Manage Viva Connections in the Microsoft 365 admin center (legacy)
+
+Viva Connections management is moving to the SharePoint admin center. You might see a banner about this change in the Microsoft 365 admin center. The Microsoft 365 admin center experience will be retired. We recommend using the SharePoint admin center to manage home sites.
+
+During the transition, you can still manage Viva Connections experiences in the Microsoft 365 admin center.
+
+1. Go to [admin.microsoft.com](https://admin.microsoft.com/Adminportal/Home#/homepage) and sign in with your credentials.
 2. Select **Settings** to expand the selection and select **Viva**.
 
     Note
@@ -88,9 +195,9 @@ Currently the app icon and name can be managed only at a tenant level. Organizat
     If Settings doesn't show, select **show all** to reveal all available menu options.
 3. Select **Viva Connections** to open the Viva Connections admin center.
 
-    [![Screenshot showing how to navigate to the Microsoft Viva admin center.](../sharepointonline/media/homesites/set-up-admin-center/microsoft-viva-option.png)](../sharepointonline/media/homesites/set-up-admin-center/microsoft-viva-option.png#lightbox)
+    [![Screenshot of how to navigate to the Microsoft Viva admin center.](../sharepointonline/media/homesites/set-up-admin-center/microsoft-viva-option.png)](../sharepointonline/media/homesites/set-up-admin-center/microsoft-viva-option.png#lightbox)
 4. Select **Create and manage Viva Connections experiences**.
-5. The Viva Connections admin center opens. If you already have a SharePoint home site (intranet portal), Viva Connections displays it as an experience automatically.
+5. The Viva Connections admin center opens. If you already have a SharePoint home site (intranet portal), Viva Connections displays it as an experience automatically. From here you can create an experience, assign owners on the Permissions tab, set audiences on the Audience tab, select Change order, and delete an experience.
 
 ## Create a new Connections experience
 
@@ -113,7 +220,7 @@ Admins are able to create multiple standalone experiences well as intranet home 
 > 
 > **B. Build from an existing intranet portal**: This option is ideal for organizations that already have a SharePoint communications site and would like to use their own content, or would like to add an intranet portal that includes Connections components that can easily be extended to the Web. This option creates a new Connections experience and automatically designates the communications site as a SharePoint home site (intranet portal) that displays navigational elements, and shares permissions.
 
-[![Screenshot showing options for creating a Viva Connections experience.](../sharepointonline/media/homesites/set-up-admin-center/create-new-viva-connections-experience.png)](../sharepointonline/media/homesites/set-up-admin-center/create-new-viva-connections-experience.png#lightbox)
+[![Screenshot of options for creating a Viva Connections experience.](../sharepointonline/media/homesites/set-up-admin-center/create-new-viva-connections-experience.png)](../sharepointonline/media/homesites/set-up-admin-center/create-new-viva-connections-experience.png#lightbox)
 
 #### Create a Connections experience
 
@@ -152,7 +259,7 @@ If your organization has an existing intranet portal, then this option allows yo
 
     The name given to the experience in the MAC displays for owners and members who help manage and edit experiences.
 
-    [![The screenshot of this diagram presents the option to build a Connections experience from an existing intranet portal.](../sharepointonline/media/homesites/set-up-admin-center/set-intranet-portal-pr.png)](../sharepointonline/media/homesites/set-up-admin-center/set-intranet-portal-pr.png#lightbox)
+    [![Screenshot of the option to build a Connections experience from an existing intranet portal.](../sharepointonline/media/homesites/set-up-admin-center/set-intranet-portal-pr.png)](../sharepointonline/media/homesites/set-up-admin-center/set-intranet-portal-pr.png#lightbox)
 4. After reviewing your settings, select **Create experience**.
 
     Note
@@ -352,7 +459,7 @@ Move expired or ‘out of service’ experiences to a draft state to keep the ex
 
 ## Setting a home site after setting up a standalone Connections experience
 
-[![Screenshot showing an example of a SharePoint home site after set up.](../sharepointonline/media/homesites/set-up-admin-center/setting-home-site-after-setting-up-connections-experience.png)](../sharepointonline/media/homesites/set-up-admin-center/setting-home-site-after-setting-up-connections-experience.png#lightbox)
+[![Screenshot of an example of a SharePoint home site after set up.](../sharepointonline/media/homesites/set-up-admin-center/setting-home-site-after-setting-up-connections-experience.png)](../sharepointonline/media/homesites/set-up-admin-center/setting-home-site-after-setting-up-connections-experience.png#lightbox)
 
 Note
 
@@ -369,15 +476,15 @@ To set the site that was created when creating your Viva Connections experience 
 1. Select the experience from the Viva Connections admin page.
 2. In the **URL** section, select **Set as home site**.
 
-    [![Screenshot highlighting the steps to select an experience and set it as the home site.](../sharepointonline/media/homesites/set-up-admin-center/set-as-home-site.png)](../sharepointonline/media/homesites/set-up-admin-center/set-as-home-site.png#lightbox)
+    [![Screenshot of the steps to select an experience and set it as the home site.](../sharepointonline/media/homesites/set-up-admin-center/set-as-home-site.png)](../sharepointonline/media/homesites/set-up-admin-center/set-as-home-site.png#lightbox)
 3. If the selected Viva Connections experience is in a draft state, you can select **enable experience** to take it out of the draft state and make it available to viewers.
 4. Select **Set home site**.
 
-    ![Screenshot highlighting the steps to enable the Viva Connections experience and set it as a home site.](../sharepointonline/media/homesites/set-up-admin-center/enable-connections-experience.png)
+    ![Screenshot of the steps to enable the Viva Connections experience and set it as a home site.](../sharepointonline/media/homesites/set-up-admin-center/enable-connections-experience.png)
 
 Once your home site is set up, it's time to plan the launch of the experience and make sure the rest of the organization can find and use the home site. Learn more about [launching your SharePoint home site](sharepoint-app-in-teams-plan#launch-your-sharepoint-home-site).
 
-### Frequently Asked Questions
+### FAQ
 
 **I already have a SharePoint home site but I haven’t set up a Connections dashboard yet. Where do I get started to set up a Connections experience?**
 

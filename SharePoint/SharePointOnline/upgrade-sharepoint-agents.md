@@ -7,7 +7,7 @@ uhfHeaderId: MSDocsHeader-SharePoint
 feedback_system: Standard
 feedback_product_url: https://feedbackportal.microsoft.com/feedback/forum/06735c62-321c-ec11-b6e7-0022481f8472
 recommendations: true
-ms.date: 2026-10-15T00:00:00.0000000Z
+ms.date: 2026-11-16T00:00:00.0000000Z
 ms.update-cycle: 180-days
 ms.reviewer: corywink
 ms.author: cjtan
@@ -51,11 +51,11 @@ platformId: cf814acd-eb7a-c0a4-0278-997ce93e6c5a
 
 # Upgrade agents in SharePoint and OneDrive - SharePoint in Microsoft 365 | Microsoft Learn
 
-Learn how to upgrade your agent experiences in SharePoint and OneDrive. Upgrading allows your agents to leverage Copilot in SharePoint and all the functionality of the [Microsoft Copilot extensibility ecosystem](/en-us/microsoft-365/copilot/extensibility).
+Learn how to upgrade your agent experiences in SharePoint and OneDrive. By upgrading, your agents can leverage Copilot in SharePoint and all the functionality of the [Microsoft Copilot extensibility ecosystem](/en-us/microsoft-365/copilot/extensibility).
 
 ## What is changing?
 
-Microsoft is upgrading the agent experience in SharePoint and OneDrive. Upgrading better aligns your agents with the [Microsoft Copilot extensibility ecosystem](/en-us/microsoft-365/copilot/extensibility), ensuring your agents are part of the [Microsoft Copilot app Home experience](https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/) and the [Microsoft plugin registry](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/introducing-the-plugin-registry---one-place-to-discover-and-govern-plugins-for-m/4559682), the shared catalog for discovering, publishing, and governing organization-approved and custom-built plugins across Microsoft Copilot experiences, Microsoft 365 apps, OneDrive and SharePoint.
+Microsoft is upgrading the agent experience in SharePoint and OneDrive. Upgrading better aligns your agents with the [Microsoft Copilot extensibility ecosystem](/en-us/microsoft-365/copilot/extensibility), ensuring your agents are part of the [Microsoft Copilot app Home experience](https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/) and the [Microsoft plugin registry](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/introducing-the-plugin-registry---one-place-to-discover-and-govern-plugins-for-m/4559682), the shared catalog for discovering, publishing, and governing organization-approved and custom-built plugins across Microsoft Copilot experiences, Microsoft 365 apps, OneDrive, and SharePoint.
 
 Existing agents in the .agent file format will continue to work across SharePoint, Microsoft Teams, and the Copilot app until the end of March 2027. You can start upgrading or moving each experience to a supported path that best fits its purpose now. After March 2027, .agent files will stop responding and you will have to upgrade to continue using them.
 
@@ -68,7 +68,7 @@ The right upgrade path depends on what each agent helps users accomplish today:
 | Provides a customized Q&A, retrieval, or analysis experience | Upgrade the agent with Microsoft Copilot Agent Builder |
 | Is a custom engine agent built in Copilot Studio and published to SharePoint | Publish the existing Copilot Studio agent to Microsoft Copilot app |
 
-Starting in mid-November 2026, you'll use [Microsoft Copilot Agent Builder](/en-us/microsoft-365/copilot/extensibility/agent-builder-build-agents) to create agents for [SharePoint](https://support.microsoft.com/sharepoint/copilot-in-sharepoint/create-an-agent-in-sharepoint) and [OneDrive](https://support.microsoft.com/onedrive/copilot/create-and-use-an-agent-in-onedrive). You can still select SharePoint and OneDrive content as knowledge sources and use a provided prompt to start building a conversational agent. However, creating an agent no longer saves a .agent file in SharePoint or OneDrive. You can edit, share, and monitor your agents through the Copilot app and manage them through [Agent 365](/en-us/microsoft-365/admin/manage/agent-registry?view=o365-worldwide).
+Starting in mid-November 2026, you'll use [Microsoft Copilot Agent Builder](/en-us/microsoft-365/copilot/extensibility/agent-builder-build-agents) to create agents for [SharePoint](https://support.microsoft.com/sharepoint/copilot-in-sharepoint/create-an-agent-in-sharepoint) and [OneDrive](https://support.microsoft.com/onedrive/copilot/create-and-use-an-agent-in-onedrive). You can still select SharePoint and OneDrive content as knowledge sources and use a provided prompt to start building a conversational agent. However, creating an agent no longer saves a .agent file in SharePoint or OneDrive. You can edit, share, and monitor your agents through the Copilot app and manage them through [Agent 365](/en-us/microsoft-365/admin/manage/agent-registry).
 
 ### Are agents in SharePoint and OneDrive being retired?
 
@@ -94,18 +94,18 @@ No. Existing .agent files will continue to work until the end of March 2027. How
 
 Agents in .agent file format stop responding to prompts:
 
-1. .agent files that you added to a Teams chat or channel stop responding.
-2. .agent files that you used in Microsoft Copilot app stop responding.
+1. .agent files that you added to a Teams chat or channel stop responding. Users will see a message indicating it needs to be upgraded before it can be used.
+2. .agent files that you used in Microsoft Copilot app stop responding. Users will see a message indicating it needs to be upgraded before it can be used.
 3. In SharePoint and OneDrive:
 
     - Accessing a .agent file (directly or through a share link) displays a message that indicates an upgrade is required.
     - The agent no longer opens in the immersive viewer, Copilot app, or SharePoint side chat pane.
-    - The agents icon on the SharePoint navigation no longer appears.
-    - The only main agent available on a SharePoint site is Copilot, so this setting is no longer needed and will be removed.
+    - The agents icon on the SharePoint navigation will be removed.
+    - The only main agent available on a SharePoint site is Copilot, so the **Main agent** setting in the **Site AI** pane is no longer needed and will be removed.
 
 ## Upgrade paths
 
-You can choose from different Copilot capabilities to upgrade to based on what your existing agent does and where people need to use it.
+Choose from different Copilot capabilities to upgrade to, based on what your existing agent does and where people need to use it.
 
 As you upgrade an existing SharePoint or OneDrive agent, consider the outcome it provides today and choose the upgrade path that best preserves that outcome. Also consider reviewing agents with no recent use or no clear owner for archival or deletion, instead of upgrading them.
 
@@ -116,6 +116,12 @@ If your existing .agent file provides a named Q&A, retrieval, or analysis experi
 Agents created through Microsoft Copilot Agent Builder can be used across supported Microsoft 365 experiences, including Copilot app, Teams, and SharePoint. Users can [monitor agents](/en-us/microsoft-365/copilot/extensibility/agent-builder-monitor-agents) in this builder, and administrators can govern, analyze, and manage agents through [Microsoft Agent 365](/en-us/microsoft-agent-365/overview).
 
 In SharePoint, site owners can bring agents directly to their audience by adding them to the pages where people need them using the [Agent Chat web part](https://www.microsoft.com/microsoft-365/roadmap?id=575298). Site owners control where these agents appear as part of the overall site experience. Usage by unlicensed users is consolidated under Copilot app pay-as-you-go (PAYG).
+
+Note
+
+Start upgrading agents that are used only on SharePoint sites and Copilot App first.
+
+If the agent is used in a Teams chat and channel, all agents used in a single chat need to be upgraded at the same time. The old agent needs to be removed and the upgraded agent added to the chat.
 
 #### Upgrade the agent with Microsoft Copilot Agent Builder
 
@@ -130,6 +136,7 @@ Some examples:
 Before you start, confirm you have the following access:
 
 - Edit permissions to the .agent file
+- [User access to agents and plugins](/en-us/microsoft-365/admin/manage/agent-settings#user-access)
 - Ability to [share that agent](/en-us/microsoft-365/admin/manage/agent-settings#sharing)
 - Permission to edit pages so an [Agent chat web part](https://www.microsoft.com/microsoft-365/roadmap?id=575298) can be added to the page
 
@@ -137,7 +144,7 @@ To upgrade:
 
 Note
 
-The upgrade experience described here will be available starting mid-November 2026.
+The upgrade experience described here begins rolling out mid-November 2026.
 
 1. Take note of who has access to the agent and where the agent is used.
 2. Edit the .agent file.
@@ -147,12 +154,12 @@ The upgrade experience described here will be available starting mid-November 20
 
 ![Screenshot of SharePoint Builder showing the Upgrade confirmation dialog with the Move file to Recycle bin option selected.](sharepointonline/media/upgrade-sharepoint-agents/upgrade-confirmation-dialog.png)
 
-1. Select **Upgrade to Microsoft 365 agent** to confirm. Teams and Copilot app will automatically use the upgraded agent.
+1. Select **Upgrade to Microsoft 365 agent** to confirm. Teams and Copilot app automatically use the upgraded agent.
 
     - If you plan to add the agent to a page [Agent Chat web part](https://www.microsoft.com/microsoft-365/roadmap?id=575298), select **Move file to Recycle bin**.
     - If you want to continue using the .agent file configuration as the main agent for the site until March 2027, through an Agent Link web part open in the SharePoint chat pane, don't select **Move file to Recycle bin**.
 2. On a successful upgrade, the agent uses Microsoft Copilot Agent Builder for all future updates. You can no longer edit the original .agent file and it won't be changed by Microsoft Copilot Agent Builder.
-3. If the original agent was shared with everyone in the organization, this access continues in the upgraded agent. Otherwise, the agent is private to you and you can share it to the necessary Microsoft 365 groups. Verify that users who need the agent can access both the agent and the selected knowledge sources.
+3. If you shared the original agent with everyone in the organization, this access continues in the upgraded agent. Otherwise, the agent is private to you and you can share it to the necessary Microsoft 365 groups. Verify that users who need the agent can access both the agent and the selected knowledge sources.
 
 ![Screenshot of the upgraded agent confirmation for a private agent, with Share and Start chat options shown.](sharepointonline/media/upgrade-sharepoint-agents/copilot-agent-builder-upgrade-confirmation-private.png)
 
@@ -204,7 +211,7 @@ To ensure that users discover Copilot in SharePoint, set Copilot as the [Main ag
 
 Note
 
-The `convert-agent-file-to-skill` skill will be available mid-November 2026.
+The `convert-agent-file-to-skill` skill begins rolling out mid-November 2026.
 
 [Skills](copilot-in-sharepoint-skills) customize what Copilot in SharePoint can do for specific business outcomes.
 
@@ -233,6 +240,12 @@ Before you start, confirm you have the following:
 To convert the agent to a skill:
 
 1. Prompt to use the skill, `convert-agent-file-to-skill`, with the .agent or .copilot agent file. You will have the option to create a site or personal skill.
+
+    ![Screenshot of the convert-agent-file-to-skill built-in skill available to users.](sharepointonline/media/upgrade-sharepoint-agents/convert-agent-file-to-skill.png)
+
+    You can choose between a skill for this site or a personal one.
+
+    ![Screenshot of selecting the skill and pointing to the agent to convert to start the process.](sharepointonline/media/upgrade-sharepoint-agents/prompt-conversion-agent-to-skill.png)
 2. To help users discover a site skill, add a [Button web part](https://support.microsoft.com/sharepoint/sites-pages/use-the-button-web-part) to the page to open Copilot in SharePoint to run a prompt with the skill. This step is optional.
 3. You can delete the .agent file after the conversion.
 
@@ -245,6 +258,7 @@ The agent owner, creator, or site owner is best suited to decide the upgrade pat
 To upgrade the agent, you need:
 
 - Edit permissions to the .agent file
+- [User access to agents and plugins](/en-us/microsoft-365/admin/manage/agent-settings#user-access)
 - Ability to [share that agent](/en-us/microsoft-365/admin/manage/agent-settings#sharing)
 - Permission to edit pages so the [Agent chat web part](https://www.microsoft.com/microsoft-365/roadmap?id=575298) can be added to the page
 
@@ -262,7 +276,7 @@ In SharePoint, you have a few options for finding your agents:
 
     ![Screenshot of the agents you own shown in Build in SharePoint.](sharepointonline/media/upgrade-sharepoint-agents/sp-build-see-agents.png)
 - Use the [agent reports on SharePoint Advanced Management](monitor-agent-usage#use-agent-reports-on-sharepoint-advanced-management) to inventory agents.
-- Use the [agent registry](/en-us/microsoft-365/admin/manage/agent-registry?view=o365-worldwide) to see "SharePoint" agents.
+- Use the [agent registry](/en-us/microsoft-365/admin/manage/agent-registry) to see "SharePoint" agents.
 - Use [search](monitor-agent-usage#use-search-to-find-all-agents-for-bulk-actions) to find your agents on the site.
 
 ### What should I do if I use an agent that someone else created?
@@ -291,7 +305,7 @@ In SharePoint, update the page to use [Agent Chat web part](https://www.microsof
 
 In Copilot app, the upgraded agent automatically loads when requested. OneDrive users should use Copilot app to use their agents.
 
-In a Teams chat or channel, the agent is upgraded but needs to be re-added to the chat or channel. Remove the agent that's in the chat or channel now, then add the upgraded agent by [grabbing a link to it](https://support.microsoft.com/microsoft-365-copilot/share-an-agent-in-the-microsoft-365-copilot-app) and adding it to a message to the chat or channel.
+Start upgrading agents that are not used in Teams chat or channel first. There are improvements coming to Teams soon which will make this upgrade easier. If you choose to upgrade an agent that is used in Teams, please note that you need to upgrade all agents used in the chat at the same time or else one upgraded agent will render all other (.agent file) agents unusable. You also need to add the upgraded agent to the chat again. You can add the upgraded agent by [grabbing a link to it](https://support.microsoft.com/microsoft-365-copilot/share-an-agent-in-the-microsoft-365-copilot-app) and adding it to a message to the chat or channel.
 
 ### How do I know an agent is upgraded?
 
@@ -307,7 +321,9 @@ If the .agent file was upgraded to a Microsoft Copilot Agent Builder declarative
 
 ### Is my existing agent already gone?
 
-No. You can use existing .agent files during the transition. The announcement provides time to inventory, evaluate, upgrade, and test experiences before .agent files stop responding to prompts after March 2027.
+No. You can use existing .agent files reliably until the end of March 2027. Use this time to inventory, evaluate, upgrade, and test experiences before .agent files stop responding to prompts after March 2027.
+
+New agents will be created through Copilot Agent Builder.
 
 ### When will the experience change?
 
@@ -357,7 +373,7 @@ Learn about [Microsoft Agent 365](/en-us/microsoft-agent-365).
 5. Update internal guidance, support processes, training, and communications before the creation experience changes.
 6. Allow time to test sharing, content access, Teams placement, SharePoint placement, and representative prompts.
 
-### Where will users find upgraded agents?
+### Where can users find upgraded agents?
 
 Users can discover declarative agents and Copilot Studio agents through supported Microsoft 365 experiences, including the plugin store, Microsoft Copilot app, and Teams.
 

@@ -13,7 +13,7 @@ ms.author: kangan
 manager: gacarini
 ms.service: onedrive
 ms.topic: release-notes
-ms.date: 2026-11-12T00:00:00.0000000Z
+ms.date: 2026-11-16T00:00:00.0000000Z
 locale: en-us
 document_id: dfd91433-e4bc-7aa9-a32e-edca3183815c
 document_version_independent_id: 9865c764-d912-b7db-cf91-299ad8e2a71f
@@ -56,7 +56,7 @@ The OneDrive sync app requires Windows 10 22H2 or Windows 11 to receive updates.
 
 | Ring | Released | Rolling Out |
 | --- | --- | --- |
-| Production | 26.198.1011.0006 ([amd64](https://go.microsoft.com/fwlink/?linkid=844652) | [arm64](https://go.microsoft.com/fwlink/?linkid=2359340)) | 26.204.1019.0007 ([amd64](https://go.microsoft.com/fwlink/?linkid=860984) | [arm64](https://go.microsoft.com/fwlink/?linkid=2359137)) |
+| Production | 26.204.1019.0009 ([amd64](https://go.microsoft.com/fwlink/?linkid=844652) | [arm64](https://go.microsoft.com/fwlink/?linkid=2359340)) | 26.212.1029.0006 ([amd64](https://go.microsoft.com/fwlink/?linkid=860984) | [arm64](https://go.microsoft.com/fwlink/?linkid=2359137)) |
 | Deferred | 26.123.0628.0001 ([amd64](https://go.microsoft.com/fwlink/?linkid=860987) | [arm64](https://go.microsoft.com/fwlink/?linkid=2359341)) | 26.189.0928.0009 ([amd64](https://oneclient.sfx.ms/Win/Installers/26.189.0928.0009/amd64/OneDriveSetup.exe) | [arm64](https://oneclient.sfx.ms/Win/Installers/26.189.0928.0009/arm64/OneDriveSetup.exe)) *Target Date: Nov 12, 2026* |
 
 **What's New**
@@ -68,6 +68,14 @@ The OneDrive sync app requires Windows 10 22H2 or Windows 11 to receive updates.
 - **Improved max path handling for OneDrive shortcuts:** OneDrive now uses the correct root path when checking Folder Shortcuts against the maximum path length, so fewer files are incorrectly flagged as exceeding the limit. (Version 26.119.0622.0003)
 
 ## Windows Production Ring
+
+#### 26.212.1029.0006 (November 13, 2026)
+
+- We resolved product issues to improve the reliability and performance of the OneDrive sync app.
+
+#### 26.204.1019.0009 (November 13, 2026)
+
+- We resolved product issues to improve the reliability and performance of the OneDrive sync app.
 
 #### 26.204.1019.0007 (November 12, 2026)
 
@@ -525,7 +533,7 @@ The OneDrive sync app requires Windows 10 22H2 or Windows 11 to receive updates.
 
 | Ring | Released | Rolling Out |
 | --- | --- | --- |
-| Production | 26.198.1011.0006 ([universal](https://go.microsoft.com/fwlink/?linkid=823060)) | 26.204.1019.0007 ([universal](https://go.microsoft.com/fwlink/?linkid=861011)) |
+| Production | 26.204.1019.0009 ([universal](https://go.microsoft.com/fwlink/?linkid=823060)) | 26.212.1029.0006 ([universal](https://go.microsoft.com/fwlink/?linkid=861011)) |
 | Deferred | 26.123.0628.0001 ([universal](https://go.microsoft.com/fwlink/?linkid=861009)) | 26.189.0928.0009 ([universal](https://oneclient.sfx.ms/Mac/Installers/26.189.0928.0009/universal/OneDrive.pkg)) *Target Date: Nov 12, 2026* |
 
 **Download:**[Standalone](https://go.microsoft.com/fwlink/?linkid=823060) | [Mac App Store](https://go.microsoft.com/fwlink/p/?LinkId=248255)
@@ -537,6 +545,14 @@ The OneDrive sync app requires Windows 10 22H2 or Windows 11 to receive updates.
 - **Search files in OneDrive Activity Center and Spotlight:** Find locally available and online-only OneDrive files by name or keyword. Eligible personal accounts can also find photos by describing what they show. View results as thumbnails and filter by file type. On macOS 26 or later, type OneDrive in Spotlight, press Tab, and enter a search term. (Version 26.189.0928.0007)
 
 ## macOS Production Ring
+
+#### 26.212.1029.0006 (November 13, 2026)
+
+- We resolved product issues to improve the reliability and performance of the OneDrive sync app.
+
+#### 26.204.1019.0009 (November 13, 2026)
+
+- We resolved product issues to improve the reliability and performance of the OneDrive sync app.
 
 #### 26.204.1019.0007 (November 12, 2026)
 
