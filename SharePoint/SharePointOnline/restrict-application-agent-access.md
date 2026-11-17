@@ -18,7 +18,7 @@ search.appverid:
 - SPO160
 - MET150
 description: Learn how to restrict which applications and agents can access SharePoint sites and their content by using tenant and site policies in SharePoint Online Management Shell.
-ms.date: 2026-10-13T00:00:00.0000000Z
+ms.date: 2026-11-13T00:00:00.0000000Z
 locale: en-us
 document_id: 4ffade43-6fcf-3cd9-cf5c-43e2df93cbf3
 document_version_independent_id: e1621050-7188-06f6-218a-8db96568c56d
@@ -37,14 +37,20 @@ item_type: Content
 source_path: SharePoint/SharePointOnline/restrict-application-agent-access.md
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/9d7be3ef-f27c-4c7f-9eba-67c3cd429995
+- https://authoring-docs-microsoft.poolparty.biz/devrel/fcc3cd4a-59ea-47a2-9cc1-784142a5a25d
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/57eae307-c3a1-4cac-b645-1a899934bac8
 spProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/feeb50f3-b677-44f9-b3a6-5f2f58182b0d
+- https://authoring-docs-microsoft.poolparty.biz/devrel/d7a55faf-a992-4e27-aa3a-eadc9830e778
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/ee561821-1ac7-45a8-9409-6ba5eb7a5b97
 platformId: 5ac17f64-bf6a-b217-984f-4ab6535ea679
 ---
 
 # Restrict SharePoint site access for applications and agents with Application Restrictions - SharePoint in Microsoft 365 | Microsoft Learn
+
+Note
+
+The Application Restrictions cmdlets are currently rolling out and might not yet be available for your tenant.
 
 Application Restrictions helps prevent oversharing to *applications* by designating which apps and agents can access a SharePoint site and its content. Applications not permitted by the policy can't access the site or its content, even when they hold Microsoft Entra consent and SharePoint permissions.
 
@@ -273,23 +279,23 @@ A record is written only after a change is persisted and only for properties who
 
 | Cmdlet | Purpose |
 | --- | --- |
-| [Get-SPOTenantRestrictedAppAccessControl](/en-us/powershell/module/sharepoint-online/get-spotenantrestrictedappaccesscontrol) | Return the tenant switch and deny list |
-| [Set-SPOTenantRestrictedAppAccessControlList](/en-us/powershell/module/sharepoint-online/set-spotenantrestrictedappaccesscontrollist) | Add or remove applications on the tenant deny list |
-| [Enable-SPOTenantRestrictedAppAccessControl](/en-us/powershell/module/sharepoint-online/enable-spotenantrestrictedappaccesscontrol) | Turn on enforcement organization-wide |
-| [Disable-SPOTenantRestrictedAppAccessControl](/en-us/powershell/module/sharepoint-online/disable-spotenantrestrictedappaccesscontrol) | Turn off enforcement, preserving the deny list |
-| [Clear-SPOTenantRestrictedAppAccessControlPolicy](/en-us/powershell/module/sharepoint-online/clear-spotenantrestrictedappaccesscontrolpolicy) | Turn off enforcement and clear the deny list |
+| [Get-SPOTenantRestrictedAppAccessControl](/en-us/powershell/module/microsoft.online.sharepoint.powershell/get-spotenantrestrictedappaccesscontrol) | Return the tenant switch and deny list |
+| [Set-SPOTenantRestrictedAppAccessControlList](/en-us/powershell/module/microsoft.online.sharepoint.powershell/set-spotenantrestrictedappaccesscontrollist) | Add or remove applications on the tenant deny list |
+| [Enable-SPOTenantRestrictedAppAccessControl](/en-us/powershell/module/microsoft.online.sharepoint.powershell/enable-spotenantrestrictedappaccesscontrol) | Turn on enforcement organization-wide |
+| [Disable-SPOTenantRestrictedAppAccessControl](/en-us/powershell/module/microsoft.online.sharepoint.powershell/disable-spotenantrestrictedappaccesscontrol) | Turn off enforcement, preserving the deny list |
+| [Clear-SPOTenantRestrictedAppAccessControlPolicy](/en-us/powershell/module/microsoft.online.sharepoint.powershell/clear-spotenantrestrictedappaccesscontrolpolicy) | Turn off enforcement and clear the deny list |
 
 **Site**
 
 | Cmdlet | Purpose |
 | --- | --- |
-| [Get-SPOSiteRestrictedAppAccessControl](/en-us/powershell/module/sharepoint-online/get-spositerestrictedappaccesscontrol) | Return a site's enablement, mode, and both lists |
-| [Set-SPOSiteRestrictedAppAccessControlMode](/en-us/powershell/module/sharepoint-online/set-spositerestrictedappaccesscontrolmode) | Set the active mode to `Allow` or `Deny` |
-| [Set-SPOSiteRestrictedAppAccessControlList](/en-us/powershell/module/sharepoint-online/set-spositerestrictedappaccesscontrollist) | Add or remove applications on a site list |
-| [Enable-SPOSiteRestrictedAppAccessControl](/en-us/powershell/module/sharepoint-online/enable-spositerestrictedappaccesscontrol) | Turn on enforcement for the site |
-| [Disable-SPOSiteRestrictedAppAccessControl](/en-us/powershell/module/sharepoint-online/disable-spositerestrictedappaccesscontrol) | Turn off enforcement, preserving mode and lists |
-| [Clear-SPOSiteRestrictedAppAccessControlList](/en-us/powershell/module/sharepoint-online/clear-spositerestrictedappaccesscontrollist) | Empty one list |
-| [Clear-SPOSiteRestrictedAppAccessControlPolicy](/en-us/powershell/module/sharepoint-online/clear-spositerestrictedappaccesscontrolpolicy) | Remove the site policy entirely |
+| [Get-SPOSiteRestrictedAppAccessControl](/en-us/powershell/module/microsoft.online.sharepoint.powershell/get-spositerestrictedappaccesscontrol) | Return a site's enablement, mode, and both lists |
+| [Set-SPOSiteRestrictedAppAccessControlMode](/en-us/powershell/module/microsoft.online.sharepoint.powershell/set-spositerestrictedappaccesscontrolmode) | Set the active mode to `Allow` or `Deny` |
+| [Set-SPOSiteRestrictedAppAccessControlList](/en-us/powershell/module/microsoft.online.sharepoint.powershell/set-spositerestrictedappaccesscontrollist) | Add or remove applications on a site list |
+| [Enable-SPOSiteRestrictedAppAccessControl](/en-us/powershell/module/microsoft.online.sharepoint.powershell/enable-spositerestrictedappaccesscontrol) | Turn on enforcement for the site |
+| [Disable-SPOSiteRestrictedAppAccessControl](/en-us/powershell/module/microsoft.online.sharepoint.powershell/disable-spositerestrictedappaccesscontrol) | Turn off enforcement, preserving mode and lists |
+| [Clear-SPOSiteRestrictedAppAccessControlList](/en-us/powershell/module/microsoft.online.sharepoint.powershell/clear-spositerestrictedappaccesscontrollist) | Empty one list |
+| [Clear-SPOSiteRestrictedAppAccessControlPolicy](/en-us/powershell/module/microsoft.online.sharepoint.powershell/clear-spositerestrictedappaccesscontrolpolicy) | Remove the site policy entirely |
 
 Application Restrictions is managed only through these dedicated cmdlets. `Get-SPOTenant` and `Get-SPOSite` don't return the policy, and `Set-SPOTenant` and `Set-SPOSite` can't change it.
 

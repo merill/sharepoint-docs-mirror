@@ -7,7 +7,7 @@ uhfHeaderId: MSDocsHeader-SharePoint
 feedback_system: Standard
 feedback_product_url: https://feedbackportal.microsoft.com/feedback/forum/06735c62-321c-ec11-b6e7-0022481f8472
 recommendations: true
-ms.date: 2026-08-12T00:00:00.0000000Z
+ms.date: 2026-11-06T00:00:00.0000000Z
 ms.reviewer: 
 ms.author: deniseb
 author: denisebmsft
@@ -43,68 +43,86 @@ monikers: []
 item_type: Content
 source_path: SharePoint/SharePointOnline/shareable-links-anyone-specific-people-organization.md
 cmProducts:
-- https://authoring-docs-microsoft.poolparty.biz/devrel/1dd701e0-441f-4b0a-9806-aa47decc4e35
+- https://authoring-docs-microsoft.poolparty.biz/devrel/fcc3cd4a-59ea-47a2-9cc1-784142a5a25d
 - https://authoring-docs-microsoft.poolparty.biz/devrel/9d7be3ef-f27c-4c7f-9eba-67c3cd429995
-- https://authoring-docs-microsoft.poolparty.biz/devrel/7428317a-e6c2-4461-ad3e-8a8ad3608734
+- https://authoring-docs-microsoft.poolparty.biz/devrel/1dd701e0-441f-4b0a-9806-aa47decc4e35
 spProducts:
-- https://authoring-docs-microsoft.poolparty.biz/devrel/0a2fc935-5977-4aa6-9f55-0be03bd2acb8
+- https://authoring-docs-microsoft.poolparty.biz/devrel/d7a55faf-a992-4e27-aa3a-eadc9830e778
 - https://authoring-docs-microsoft.poolparty.biz/devrel/feeb50f3-b677-44f9-b3a6-5f2f58182b0d
-- https://authoring-docs-microsoft.poolparty.biz/devrel/e4f59707-f107-48f2-8d75-0afd91868cd7
+- https://authoring-docs-microsoft.poolparty.biz/devrel/0a2fc935-5977-4aa6-9f55-0be03bd2acb8
 platformId: 07652f98-406e-d7fc-3df7-27a991a7d2a6
 ---
 
 # How shareable links work in OneDrive and SharePoint in Microsoft 365 - SharePoint in Microsoft 365 | Microsoft Learn
 
-When a user shares a file or folder in Microsoft 365, they create a shareable link with permissions to the item. There are three primary link types:
+Sharing links determine who can open a file or folder when they receive its link and what they can do with the item. In OneDrive and SharePoint, each item has one **hero link**. A hero link allows users to share a single link for an item, then change the audience and permissions for that link without needing to create a new URL.
 
-- "Anyone" links
-- "People in your organization" links
-- "Specific people" links
+## Sharing with direct access and links
 
-It's important for everyone to understand how sharing links work and which ones to use to maintain data security. This article describes different types of sharing links and includes links to more resources.
+Users can share an item with specific people or security groups through **Add people**. This action grants direct access to the item. The item can appear in search results and is accessible through Copilot for selected users and security group members, subject to their permissions.
 
-## "Anyone" links
+To share beyond a named set of recipients, users can change who the hero link works for under **File link settings**. A item has one hero link. Two people copying the hero link from the same item get the same link. Links shared by email or copied from the browser address bar work the same way for access, although the URLs might look different.
 
-*Anyone* links give access to the item to anyone who has the link. People using an *Anyone* link don't have to authenticate, and their access can't be audited.
+## Hero link audience scope
 
-![Diagram showing how anyone links can be passed from user to user.](sharepointonline/media/dmc_sharepointsharinglinks_anyone.png)
+The audience *scope* determines who can use the hero link. Available scopes depend on the organization's sharing policies.
 
-An *Anyone* link is a transferable, revocable secret key.
+### Only people added to the file have access
 
-- It's transferable because it can be forwarded to others.
-- It's revocable because you can revoke access for everyone who used the link by deleting it.
-- It's secret because it can't be guessed or derived.
+At this scope, the link works for people who already have access, such as through a direct permission, a group, or the parent folder or site. It grants no additional access.
 
-The only way to get access is to get the link, and the only way to get the link is for somebody to give it to you. *Anyone* links can't be used with files in a Microsoft Teams shared channel site.
+This scope is the usual starting point. The default can differ based on site settings and the parent folder.
 
-Creating an *Anyone* link doesn't make the associated content appear in search results or make it accessible through Copilot. It also doesn't immediately grant access to the content to everyone. An *Anyone* link must be activated by clicking the link (redemption) before the shared content becomes searchable by the person who has the link.
+### Anyone with the link
 
-## "People in your organization" links
+Anyone who receives the link can use it without signing in, including people outside the organization. Anyone can forward the link, and anonymous use can't be audited to a named user.
 
-*People in your organization* links work only for people inside your Microsoft 365 organization. They don't work for guests in the directory, only members.
+[![Screenshot of a diagram showing how an Anyone with the link sharing link can be passed from user to user.](sharepointonline/media/dmc-sharepointsharinglinks-anyone.png)](sharepointonline/media/dmc-sharepointsharinglinks-anyone.png#lightbox)
 
-![Diagram showing how people in my organization links can be passed from user to user inside the company.](sharepointonline/media/dmc_sharepointsharinglinks_peopleinyourorganization.png)
+Selecting this scope doesn't make the content globally searchable or accessible through Copilot, or grant access to everyone. A person must receive and redeem the link by selecting it before the shared content becomes searchable for them.
 
-Like an *anyone* link, a *People in my organization* link is a transferable, revocable secret key. These links only work for people who are inside your Microsoft 365 organization. When somebody opens a *People in my organization* link, they need to be authenticated as a member in your directory. If they're not currently signed in, they're prompted to sign in.
+### People in your organization with the link
 
-Creating a *People in your organization* link doesn't make the associated file or folder appear in search results or make it accessible through Copilot. It also doesn't grant access to everyone within the organization. Creating this link doesn't provide organizational-wide access to the content. For individuals to access the file or folder, they must possess the link, and it needs to be activated through redemption (clicking it). A user redeems the link by selecting it.
+The link works for people who sign in as members of your Microsoft 365 directory. They can forward it to other members, but it doesn't work for guests or people outside the organization.
 
-If you send the link from the SharePoint or OneDrive Web UI, or by using email in Outlook or a chat message in Microsoft Teams, you automatically redeem it for individual recipients, up to a limit of 100. This feature isn't supported for group recipients, or for messages posted in Microsoft Teams channels. The link doesn't work for guests or other people outside your organization.
+[![Screenshot of a diagram showing how a People in your organization with the link sharing link can be passed from user to user inside the company.](sharepointonline/media/dmc-sharepointsharinglinks-peopleinyourorganization.png)](sharepointonline/media/dmc-sharepointsharinglinks-peopleinyourorganization.png#lightbox)
 
-**Expiration of "People in your organization" links**
+Selecting this scope doesn't grant organization-wide access or make the item available in search or Copilot for everyone in the organization. Access through the link is established when a recipient redeems it. Microsoft 365 experiences such as SharePoint, OneDrive, Outlook, or Microsoft Teams might redeem the link automatically for recipients.
 
-Administrators can configure expiration policies for *People in your organization* sharing links in SharePoint and OneDrive. When an expiration policy is enabled, newly created links get an expiration date and stop working after that date.
+## Link permissions and changes to access
 
-Existing *People in your organization* links aren't automatically modified when an expiration policy is enabled. However, when an existing link is accessed after the policy is in effect, the link is evaluated against the configured expiration limit using its original creation date. If the link exceeds the allowed age, it's treated as expired and can no longer be used to access the content.
+While scope determines who can use the link, *permission* determines what they can do with the shared item. For a link with organization or anyone scope, users can choose **Can edit**, **Can view**, **Can't download**, or **Can review** (for supported file types). The same permission options are available for direct access.
 
-When a sharing link expires, only the link is affected. The file or folder isn't deleted, and users who have access through other permissions can continue to access the content.
+**Can view** is the default when a user first allows access to an item through the hero link. Administrators can't configure a different default permission for the hero link. At **Only people added to the file have access**, no link permission is in effect because the link grants no access of its own.
 
-## "Specific people" links
+Changing the scope or permission doesn't create a new URL. The change applies to links already sent, so narrowing the scope limits who can use those links.
 
-*Specific people* links only work for the people that users specify when they share the item.
+A user's effective access is the highest permission granted by any source: direct access, a group, the parent folder or site, the hero link, or another sharing link. For example, a user with **Can edit** direct access can still edit the item when the hero link grants **Can view**. Reducing access requires changing each source that grants a higher permission.
 
-![Diagram showing how specific people links only work for the people specified.](sharepointonline/media/dmc_sharepointsharinglinks_specific.png)
+## Default scope and folder settings
 
-A *Specific people* link is a nontransferable, revocable secret key. *Specific people* links don't work if they're opened by anybody other than the persons who are specified by the sender. Moreover, *Specific people* links make the associated file or folder appear in search results and make it accessible through Copilot for all user and security group members who are added to the sharing link.
+In SharePoint PowerShell, set the default audience scope for the hero link, referred to as the *main link*, with `DefaultMainLinkScope` on a site. For syntax and supported values, see [Set-SPOSite](/en-us/powershell/module/sharepoint-online/set-sposite).
 
-*Specific people* links can be used to share with users in the organization and people outside the organization. In both cases, the recipient needs to authenticate as the user specified in the link. For files in a Microsoft Teams shared channel site, *Specific people* links can only be sent to others in the channel.
+A file inherits its folder's hero link settings until the file's own hero link is explicitly set or changed. After that, the file's hero link settings are independent.
+
+Folder sharing also grants permissions to all files and subfolders inside the folder that the sharer has access to. Owners can block those automatic permission updates for an item. This setting is separate from setting that item's hero link audience.
+
+## Additional sharing links
+
+Users can create extra links for specific needs, such as setting an expiration date or a password. They can name these links to identify the task or audience. The sharing dialog lists them under **Other links**, along with links inherited from a parent folder.
+
+Extra links can work for people in the organization, anyone with the link, or **Specific people**, which limits the link to named recipients inside or outside the organization. Available options depend on the organization's sharing policies.
+
+Each extra link has its own audience and permission settings. Users can choose **Can edit**, **Can view**, **Can't download**, or **Can review**, where supported for the item and link type. Changing the hero link doesn't change or remove extra links.
+
+Note
+
+Links created before the hero link sharing experience continue to work and appear under **Other links**.
+
+### Specific-recipient sharing links
+
+For the **Specific people** sharing link, the user sharing an item enters the names or email addresses of the intended recipients. Recipients must authenticate as a specified person in the link. Forwarding it doesn't grant access to someone else, and the link can be removed to stop sharing through that link.
+
+Teams and Outlook might show **People in this chat** or **People in this email**. These are specific-people links scoped to the recipients in that chat or email, not to everyone in the organization.
+
+For users and security group members added to a specific-recipient link, the item can appear in search results and be accessible through Copilot, subject to their permissions. For files in a Microsoft Teams shared channel site, you can send these links only to people in the channel.
