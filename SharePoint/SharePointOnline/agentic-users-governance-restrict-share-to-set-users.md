@@ -109,7 +109,7 @@ Global Administrators can turn on the guardrail as one of the default protection
 
 When you set the guardrail to **On**, every agent user associated with the agent template can share site and content only with their manager.
 
-[![Screenshot of the Default protection for autopilots Policies tab in Microsoft admin center with Restrict collaboration by agentic users turned On.](media/agentic-users-governance-restrict-share-to-set-users/restrict-agent-collaboration.png)](sharepointonline/media/agentic-users-governance-restrict-share-to-set-users/agent-365-policies-autopilot-protections.png#lightbox)
+[![Screenshot of the Default protection for autopilots Policies tab in Microsoft admin center with Restrict collaboration by agentic users turned On.](sharepointonline/media/agentic-users-governance-restrict-share-to-set-users/restrict-agent-collaboration-pane.png)](sharepointonline/media/agentic-users-governance-restrict-share-to-set-users/restrict-agent-collaboration-pane.png#lightbox)
 
 ## Agentic user guardrail FAQ
 
