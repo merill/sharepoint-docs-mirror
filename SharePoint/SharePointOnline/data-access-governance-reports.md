@@ -48,8 +48,10 @@ monikers: []
 item_type: Content
 source_path: SharePoint/SharePointOnline/data-access-governance-reports.md
 cmProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/fcc3cd4a-59ea-47a2-9cc1-784142a5a25d
 - https://authoring-docs-microsoft.poolparty.biz/devrel/9d7be3ef-f27c-4c7f-9eba-67c3cd429995
 spProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/d7a55faf-a992-4e27-aa3a-eadc9830e778
 - https://authoring-docs-microsoft.poolparty.biz/devrel/feeb50f3-b677-44f9-b3a6-5f2f58182b0d
 platformId: cc2d9349-ac7e-06dd-f9bc-6653c502a74d
 ---
@@ -74,13 +76,14 @@ The reports are currently unavailable for Microsoft 365 operated by 21Vianet, ev
     - **[Snapshot reports](/en-us/sharepoint/data-access-governance-reports#what-are-snapshot-reports)**
 
         - [Site permissions across your organization](/en-us/sharepoint/data-access-governance-reports#what-is-the-site-permissions-report) (Recommended)
+        - Site permissions for users or groups
         - [Sensitivity label applied to files](/en-us/sharepoint/data-access-governance-reports#sensitivity-labels-for-files-reports)
     - **[Activity reports](/en-us/sharepoint/data-access-governance-reports#what-are-activity-reports)**
 
         - [Sharing links](/en-us/sharepoint/data-access-governance-reports#what-is-the-sharing-links-report)
         - [Shared with 'Everyone except external users'](/en-us/sharepoint/data-access-governance-reports#what-is-the-everyone-except-external-users-eeeu-report)
 
-    [![Screenshot of the Data access governance landing page.](sharepointonline/media/data-access-governance/data-access-governance-home-page.png)](sharepointonline/media/data-access-governance/data-access-governance-home-page.png#lightbox)
+    [![Screenshot of the Data access governance landing page with the Site permissions for users or groups report.](sharepointonline/media/data-access-governance/data-access-governance-users-groups-home.jpg)](sharepointonline/media/data-access-governance/data-access-governance-users-groups-home.jpg#lightbox)
 
 Note
 
@@ -93,7 +96,7 @@ Snapshot reports give you a snapshot of your organization's current status based
 Currently, three types of snapshot reports are available:
 
 - **Site permissions report**: Provides a comprehensive snapshot of the permission structure across all SharePoint and OneDrive sites. It helps you identify sites with the broadest user access, such as sites with thousands of users, external guests, or "Everyone except external users" permissions.
-- **Site permissions for users report**: Lists all sites a specified user can access. Admins can use this report to determine whether the user can access the entire site or specific sections, granted directly to the user or indirectly through groups.
+- **Site permissions for users or groups report**: Lists all sites a specified user or group can access and the extent of that access. Each report contains either users or groups, not both.
 - **Sensitivity label for files report**: Identifies SharePoint sites containing files with specific sensitivity labels applied. You can use this report to verify that appropriate security policies are in place for your most sensitive content.
 
 ## What are activity reports?
@@ -132,11 +135,13 @@ The site permissions for your organization report is the first snapshot report t
 
 Learn how to create and use the [site permissions for your organization report](data-access-governance-site-permissions-report).
 
-## What is the site permissions for users report?
+## What is the site permissions for users or groups report?
 
-The site permissions for users report is the next snapshot report that provides a comprehensive view into permissions of the specified users across all SharePoint and OneDrive sites. This report lists all sites a user can access and allows admins to determine whether they can access the entire site or specific sections, granted directly to the user or indirectly through groups. This approach helps you quickly assess your overall security posture and identify sites that need immediate attention.
+The site permissions for users or groups report provides a snapshot of sites accessible to specified users or groups across SharePoint and OneDrive. You can select either users or groups for a report. Supported groups are Microsoft 365 groups and Microsoft Entra security groups identifiable in Microsoft Entra ID. SharePoint groups aren't supported as report inputs.
 
-Learn how to create and use the [site permissions for users report](data-access-governance-site-permissions-users-report).
+For users, the report shows whether the entire site is shared and counts of items with direct or indirect access through group membership. For groups, it shows whether the entire site is shared and the count of items shared directly with the group. Group reports don't include indirect-permission counts.
+
+Learn how to create and use the [site permissions for users or groups report](data-access-governance-site-permissions-users-report).
 
 ## What is the sites and files shared via special SharePoint groups report?
 

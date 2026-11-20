@@ -48,18 +48,18 @@ platformId: b7d88f6c-a179-3832-fde0-f9d5117c14f9
 
 # Get started with Copilot in SharePoint - SharePoint in Microsoft 365 | Microsoft Learn
 
-Copilot in SharePoint brings agentic capabilities into SharePoint so teams can ask questions, run workflows, and create sites, pages, interactive reports, and Office files from their SharePoint content using natural language. Videos, prompt guides and other getting started materials are available [here](https://adoption.microsoft.com/copilot-in-sharepoint/).
+Copilot in SharePoint brings agentic capabilities into SharePoint so teams can ask questions, run workflows, and create sites, pages, interactive reports, and Office files from their SharePoint content by using natural language. Videos, prompt guides, and other getting started materials are available [here](https://adoption.microsoft.com/copilot-in-sharepoint/).
 
-Copilot in SharePoint is currently in public preview. General availability begins rolling out on September 30, 2026. Capabilities may appear in your tenant after that date as rollout progresses.
+Copilot in SharePoint is currently in public preview. General availability begins rolling out on September 30, 2026. Capabilities might appear in your tenant after that date as the rollout progresses.
 
 Important
 
 Two things change at general availability:
 
-- **Availability controls.** The PowerShell cmdlets used to opt tenants and sites in or out during preview are being retired. Existing settings are honored until November 1, 2026. Learn how to manage availability [here](/en-us/SharePoint/copilot-in-sharepoint-get-started#manage-availability-of-copilot-in-sharepoint).
-- **Advanced work with Copilot Credits** New agentic capabilities and the ability to work at greater scale than was possible in preview are being added to Copilot in SharePoint. These are called advanced work and use Copilot Credits through usage-based billing.
+- **Availability controls.** The PowerShell cmdlets used to opt tenants and sites in or out during preview are retiring. Existing settings are honored until November 1, 2026. Learn how to manage availability [here](/en-us/SharePoint/copilot-in-sharepoint-get-started#manage-availability-of-copilot-in-sharepoint).
+- **Advanced work with Copilot Credits** New agentic capabilities and the ability to work at greater scale than was possible in preview are being added to Copilot in SharePoint. These capabilities are called advanced work and use Copilot Credits through usage-based billing.
 
-The everyday Copilot in SharePoint capabilities that have been in public preview stay included with the Microsoft 365 Copilot license.
+The everyday Copilot in SharePoint capabilities that were in public preview stay included with the Microsoft 365 Copilot license.
 
 ## Prerequisites
 
@@ -88,7 +88,7 @@ Copilot Credit consumption varies based on the type and complexity of the task a
 
 ## Set up usage-based billing
 
-Copilot in SharePoint uses the same Copilot Credits cost-management experience as other advanced AI workloads. It doesn't introduce a separate administration model. Details on usage-based billing and cost management are [here](/en-us/microsoft-365/copilot/usage-based-billing-overview-copilot-credits).
+Copilot in SharePoint uses the same Copilot Credits cost-management experience as other advanced AI workloads. It doesn't introduce a separate administration model. For details on usage-based billing and cost management, see [Usage-based billing overview for Copilot Credits](/en-us/microsoft-365/copilot/usage-based-billing-overview-copilot-credits).
 
 For most organizations, an admin action is required before anyone can use advanced capabilities.
 
@@ -98,7 +98,7 @@ For most organizations, an admin action is required before anyone can use advanc
 4. Under **Agents and services**, select **Advanced work in SharePoint**.
 5. Set **Limits and alerts** for the policy, choose a **Billing method**, then review and add the policy.
 
-Notes:
+Note
 
 - Admins who are new to Copilot Credits need to create a [cost management policy](https://go.microsoft.com/fwlink/p/?linkid=2201187).
 - Existing cost management policies might automatically include newly available services if the **Allow new agents and services as they become available** option is turned on for the policy. Review your existing policies to check this setting.
@@ -110,11 +110,11 @@ You don't need to enable usage-based capabilities for every SharePoint user. Pri
 - **Content managers**—prioritize for credits. Examples include knowledge managers, records managers, paralegals, compliance analysts, and library services coordinators who curate, classify, and process content across large collections or on an ongoing basis.
 - **Site managers**—prioritize for credits. Examples include SharePoint administrators, digital workplace managers, intranet managers, and collaboration platform leads who create or update sites at scale and enable site-wide processing.
 - **Content creators**—assign based on need. Everyday content creation is included, but high-volume or repeatable creation might require advanced capabilities.
-- **All other SharePoint users**—likely do not need credits. Everyday individual productivity scenarios remain included with the Microsoft 365 Copilot license.
+- **All other SharePoint users**—likely don't need credits. Everyday individual productivity scenarios remain included with the Microsoft 365 Copilot license.
 
 ## What users see
 
-- **For most users, the experience is unchanged from preview.** Copilot Credits aren't required for everyday productivity tasks.
+- **For most users, the experience is unchanged from preview.** Users don't need Copilot Credits for everyday productivity tasks.
 - **Users with credits are asked to confirm.** When a prompt requires an advanced capability, or crosses the threshold of working at scale, Copilot asks the user to approve credit use before continuing. The UI then indicates that credits are being spent for that session.
 - **Users can check credit usage.** Prompting `/cost` shows how many credits a task used and how much of the monthly limit remains, including when the limit resets.
 - **Users are warned before running out.** When 20% of the monthly credit limit remains, Copilot notifies the user that usage-based features pause until the next month when the limit is reached. Users can request more credits from that prompt.
@@ -139,7 +139,7 @@ Copilot in SharePoint currently runs on a Microsoft-managed reasoning model from
 
 The weekly limits that applied during public preview are removed at general availability.
 
-In rare cases, daily service protection limits may still apply for Copilot licensed users to help ensure fair access for everyone. If a user reaches a service protection limit, Copilot features in SharePoint are temporarily unavailable until the limit resets.
+In rare cases, daily service protection limits might still apply for Copilot licensed users to help ensure fair access for everyone. If a user reaches a service protection limit, Copilot features in SharePoint are temporarily unavailable until the limit resets.
 
 ## Manage Availability of Copilot in SharePoint
 
@@ -161,18 +161,18 @@ Restricted Content Discovery is an existing setting that's respected. If it's en
 
 PowerShell controls were previously used to manage availability of Copilot in SharePoint. With the transition from public preview to general availability, Copilot in SharePoint is retiring the PowerShell commands used to opt tenants and sites in or out during preview—`KnowledgeAgentScope`, `KnowledgeAgentSelectedSitesList`, and `KnowledgeAgentSelectedSitesListOperation`.
 
-- Existing PowerShell settings continue to be honored until **November 1, 2026**.
-- After November 1, 2026, manage availability using Site AI settings and Restricted Content Discovery.
+- Existing PowerShell settings remain in effect until **November 1, 2026**.
+- After November 1, 2026, manage availability by using Site AI settings and Restricted Content Discovery.
 
-### Powershell controls details
+### PowerShell controls details
 
 Use the existing `KnowledgeAgent` parameters in `Set-SPOTenant` to manage availability across all sites, selectively include sites, or selectively exclude sites.
 
-For multigeo tenants, run the PowerShell script in each geo. Note that the underlying PowerShell parameter names, such as `KnowledgeAgentScope`, retain the preview naming for compatibility. Although the feature is now described as Copilot in SharePoint, the parameter names remain unchanged.
+For multigeo tenants, run the PowerShell script in each geo. The underlying PowerShell parameter names, such as `KnowledgeAgentScope`, keep the preview naming for compatibility. Although the feature is now described as Copilot in SharePoint, the parameter names stay the same.
 
 Use the [SharePoint Online Management Shell version 16.0.26615.12013 or later](https://www.microsoft.com/download/details.aspx?id=35588) to manage access to Copilot in SharePoint for users with Copilot licenses. For setup instructions, see [Get started with SharePoint Online Management Shell](/en-us/powershell/sharepoint/sharepoint-online/connect-sharepoint-online).
 
-If you already have the SharePoint Online Management Shell installed, make sure you're running the latest version by running the following command in administrative mode: `Update-Module -Name Microsoft.Online.SharePoint.PowerShell`.
+If you already have the SharePoint Online Management Shell installed, ensure you're running the latest version by running the following command in administrative mode: `Update-Module -Name Microsoft.Online.SharePoint.PowerShell`.
 
 ### To resolve versioning errors
 
@@ -225,9 +225,8 @@ To resolve the issue, follow these steps:
 #### KnowledgeAgentSelectedSitesList
 
 - **Description**: Administrators use KnowledgeAgentSelectedSitesList to pass a list of SharePoint site URLs to include or exclude from Copilot in SharePoint.
-- When `KnowledgeAgentScope` = **ExcludeSelectedSites**: the list is treated as sites to **EXCLUDE** (site opt-out list).
-
-    - When `KnowledgeAgentScope` = **IncludeSelectedSites**: the list is treated as sites to **INCLUDE** (site opt-in list).
+- When `KnowledgeAgentScope` = **ExcludeSelectedSites**: treat the list as sites to **EXCLUDE** (site opt-out list).
+- When `KnowledgeAgentScope` = **IncludeSelectedSites**: treat the list as sites to **INCLUDE** (site opt-in list).
 - By default, this list overwrites any existing list.
 - You can only call this parameter when `KnowledgeAgentScope` is set to `IncludeSelectedSites` or `ExcludeSelectedSites`.
 - The list of site URLs can't exceed 100 items.

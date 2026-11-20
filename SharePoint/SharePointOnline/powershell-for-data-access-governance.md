@@ -7,7 +7,7 @@ uhfHeaderId: MSDocsHeader-SharePoint
 feedback_system: Standard
 feedback_product_url: https://feedbackportal.microsoft.com/feedback/forum/06735c62-321c-ec11-b6e7-0022481f8472
 recommendations: true
-ms.date: 2026-07-30T00:00:00.0000000Z
+ms.date: 2026-11-03T00:00:00.0000000Z
 ms.reviewer: pullabhk
 ms.author: deniseb
 author: denisebmsft
@@ -106,7 +106,7 @@ Once you understand the extent of oversharing in your tenant, you can track furt
 
 ## Generate a user permission state report
 
-While the site permission report for the entire organization helps you understand the current state of permissions in the entire tenant, some scenarios require discovering sites accessible to a given user. For more information, see [Get your organization's site permissions baseline with the snapshot report](/en-us/sharepoint/data-access-governance-site-permissions-users-report). The following section describes how data access governance helps you generate such a report by using PowerShell.
+While the site permission report for the entire organization helps you understand the current state of permissions in the entire tenant, some scenarios require discovering sites accessible to a given user. For more information, see [Discover sites accessible by a user or group with the snapshot report](data-access-governance-site-permissions-users-report). The following section describes how data access governance helps you generate a user report by using PowerShell. To report on groups instead, see Generate a group permission state report.
 
 First, fetch the UPN or User principal name of the user for whom you want to generate the report by using the [Get-MgUser](/en-us/powershell/module/microsoft.graph.users/get-mguser) command. Then run the following PowerShell command, which triggers the report listing SharePoint sites accessible to those users.
 
@@ -123,6 +123,50 @@ To list OneDrive accounts accessible to the given users, specify the workload as
 ```powershell
 Start-SPODataAccessGovernanceInsight -ReportEntity PermissionsReport -ReportType Snapshot -Workload OneDriveForBusiness -Name "UserOneDriveReport" -UserEmailList "a@contoso.com","b@contoso.com"
 ```
+
+## Generate a group permission state report
+
+Use a group permission state report to discover sites accessible to Microsoft 365 groups or Microsoft Entra security groups. SharePoint groups and distribution lists aren't supported as report inputs. Each report contains either users or groups, not both, and a group report can include up to 100 groups.
+
+Use the Microsoft Graph PowerShell SDK to retrieve the groups. Connect to Microsoft Graph with permission to read groups:
+
+```powershell
+Connect-MgGraph -Scopes "Group.Read.All"
+```
+
+Retrieve the groups with [Get-MgGroup](/en-us/powershell/module/microsoft.graph.groups/get-mggroup), then pass the returned group objects directly to the `TargetGroups` parameter. The following example generates a report for the groups with the display name `Finance Owners`:
+
+```powershell
+$groups = Get-MgGroup -Filter "displayName eq 'Finance Owners'"
+
+Start-SPODataAccessGovernanceInsight `
+    -ReportEntity PermissionsReport `
+    -ReportType Snapshot `
+    -Workload SharePoint `
+    -Name "GroupPermissionsReport" `
+    -TargetGroups $groups
+```
+
+To list OneDrive accounts accessible to the groups, use `-Workload OneDriveForBusiness` instead.
+
+The report shows whether the entire site is shared with each group and the count of items shared directly with the group. It doesn't include indirect-permission counts or expand permissions inherited through nested-group membership. For more information, see [Discover sites accessible by a user or group with the snapshot report](data-access-governance-site-permissions-users-report).
+
+### Review user and group report results
+
+Review all fields in your generated report to avoid missing information about inputs that couldn't be included. Use the following command to check user and group permission reports:
+
+```powershell
+Get-SPODataAccessGovernanceInsight -ReportEntity PermissionsReport
+```
+
+The report results include the following fields:
+
+| Field | Description |
+| --- | --- |
+| `UserPrincipalNames` | Users for whom permission data was generated, identified by user principal name. Applies to user reports. |
+| `TargetGroupNames` | Groups for whom permission data was generated, identified by display name. Applies to group reports. |
+| `InvalidEntries` | Inputs that couldn't be found in the directory. |
+| `EntriesWithNoData` | Users or groups that exist in the directory but have no permission data. |
 
 ## Generate a report on sites and files shared via special SharePoint groups
 

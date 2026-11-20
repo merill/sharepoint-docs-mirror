@@ -1,19 +1,19 @@
 ---
 layout: Conceptual
-title: Data access governance reports - get site permission report for given users - SharePoint in Microsoft 365 | Microsoft Learn
+title: Data access governance reports - get site permissions for users or groups - SharePoint in Microsoft 365 | Microsoft Learn
 canonicalUrl: https://learn.microsoft.com/en-us/sharepoint/data-access-governance-site-permissions-users-report
 breadcrumb_path: /sharepoint/breadcrumb/toc.json
 uhfHeaderId: MSDocsHeader-SharePoint
 feedback_system: Standard
 feedback_product_url: https://feedbackportal.microsoft.com/feedback/forum/06735c62-321c-ec11-b6e7-0022481f8472
 recommendations: true
-ms.date: 2026-07-01T00:00:00.0000000Z
+ms.date: 2026-11-03T00:00:00.0000000Z
 ms.reviewer: pullabhk
 ms.author: deniseb
 author: denisebmsft
 manager: dansimp
 audience: Admin
-customer-intent: As a SharePoint administrator, I want to determine which sites are accessible by the given user and determine the extent of their access so that I can take necessary actions to modify permissions for sensitive content.
+customer-intent: As a SharePoint administrator, I want to determine which sites are accessible by a given user or group and the extent of their access so that I can modify permissions for sensitive content.
 f1.keywords: NOCSH
 ms.topic: how-to
 ms.service: sharepoint-online
@@ -29,7 +29,8 @@ ms.collection:
 ms.custom:
 - admindeeplinkSPO
 search.appverid: 
-description: In this article, you learn how to get a snapshot report to view the list of sites accessible by a given user.
+description: Learn how to get a snapshot report of sites accessible by a given user, Microsoft 365 group, or Microsoft Entra security group.
+ai-usage: ai-assisted
 locale: en-us
 document_id: ead40917-f425-c932-5618-92141bdd6a34
 document_version_independent_id: 4be03822-1f99-244e-e91f-b52b35d4741b
@@ -47,27 +48,42 @@ monikers: []
 item_type: Content
 source_path: SharePoint/SharePointOnline/data-access-governance-site-permissions-users-report.md
 cmProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/fcc3cd4a-59ea-47a2-9cc1-784142a5a25d
 - https://authoring-docs-microsoft.poolparty.biz/devrel/9d7be3ef-f27c-4c7f-9eba-67c3cd429995
 - https://authoring-docs-microsoft.poolparty.biz/devrel/1dd701e0-441f-4b0a-9806-aa47decc4e35
 spProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/d7a55faf-a992-4e27-aa3a-eadc9830e778
 - https://authoring-docs-microsoft.poolparty.biz/devrel/feeb50f3-b677-44f9-b3a6-5f2f58182b0d
 - https://authoring-docs-microsoft.poolparty.biz/devrel/0a2fc935-5977-4aa6-9f55-0be03bd2acb8
 platformId: b9b98e36-5d05-86f6-9d2e-e54d1d327042
 ---
 
-# Data access governance reports - get site permission report for given users - SharePoint in Microsoft 365 | Microsoft Learn
+# Data access governance reports - get site permissions for users or groups - SharePoint in Microsoft 365 | Microsoft Learn
 
-The **Site permissions for users** report is one of the [Data access governance snapshot reports](/en-us/sharepoint/data-access-governance-reports#what-are-snapshot-reports) available with [SharePoint Advanced Management](advanced-management). This report lists all sites a user can access and helps admins determine whether they can access the entire site or specific sections, granted directly to the user or indirectly through groups. This approach helps you quickly assess your overall security posture and identify sites that need immediate attention.
+The **Site permissions for users or groups** report is one of the [Data access governance snapshot reports](data-access-governance-reports#what-are-snapshot-reports) available with [SharePoint Advanced Management](advanced-management). This report lists all sites a specified user or group can access and helps you determine the extent of that access. Use it to assess your security posture and identify sites that need attention.
 
-## What does the site permissions for users report show me?
+You can select users, Microsoft 365 groups, or Microsoft Entra security groups. Groups must be identifiable in Microsoft Entra ID. SharePoint groups and distribution lists aren't supported as report inputs. Each report contains either users or groups, not both.
 
-The site permissions for users report captures the permission state of given users at a specific point in time. It gives you a complete overview of sites accessible to these users along with the extent of access. You can determine whether the entire site is shared with the user or only a few files or items are shared. For the complete list of metrics captured in the report, see the Download the site permissions for users section.
+## What does the site permissions for users or groups report show me?
 
-## When should I use the site permissions for users report?
+The report captures the permission state of the selected users or groups at a specific point in time. For each user or group, it lists all accessible sites and shows whether the entire site is shared or access is limited to specific files or folders.
+
+- For users, the report includes counts of items shared directly with the user and items accessible indirectly through group membership.
+- For groups, the report shows whether the entire site is shared with the group and the count of items shared directly with the group. It doesn't include a count of items with indirect permissions.
+
+Note
+
+Group reports don't expand nested-group permissions. If a security group is a member of another group, access granted to the parent group isn't included in the nested group's report.
+
+For the complete list of metrics, see Download the site permissions for users or groups report.
+
+## When should I use the site permissions for users or groups report?
 
 Use the report when you want to review permissions for users before assigning them a Copilot license. Use it if you want to clean up permissions when the user is about to leave the organization or changed departments.
 
-## Run the site permissions for users report
+Select groups when you want to review which sites and items are accessible to a Microsoft 365 group or Microsoft Entra security group. Use the results to identify access that needs review.
+
+## Run the site permissions for users or groups report
 
 Important
 
@@ -77,35 +93,45 @@ Review these important details before creating your first report:
 - Reports capture data from up to 48 hours before generation.
 - You can have up to five reports.
 - You can run reports again every 30 days.
+- You can include up to 100 groups in a group report.
 
-Here's how to run the site permissions for users report:
+Here's how to run the site permissions for users or groups report:
 
-1. From the Data access governance landing page, select **View reports** under **Site permissions for users**.
+1. From the Data access governance landing page, select **View reports** under **Site permissions for users or groups**.
 2. Select **Create report** to generate your report.
-3. Select **Add users to report** to select the users for whom you want to generate the report. Select **Save** to save the selections. You can also edit the selection and remove users or add new users, if required.
-4. Specify the **Scope** - either SharePoint or OneDrive.
-5. Provide the **Report name** - a unique name to identify this report.
-6. Select **Create and run** to trigger the creation of report.
-7. Check the **Status** column to see if a report is ready or when it was last updated.
+3. Under **Create report for**, select **Users** or **Groups**, then select **Next**. A single report can't include both recipient types.
 
-### How do I view the site permissions for users report?
+    [![Screenshot of the Create a report pane with Users and Groups options under Create report for.](sharepointonline/media/data-access-governance/users-groups-report-recipient-selection.png)](sharepointonline/media/data-access-governance/users-groups-report-recipient-selection.png#lightbox)
+4. Add the users or groups for whom you want to generate the report, then select **Save**. For groups, select Microsoft 365 groups or Microsoft Entra security groups. You can edit the selection to add or remove users or groups of the selected recipient type.
+5. Specify the **Scope** - either SharePoint or OneDrive.
+6. Provide the **Report name** - a unique name to identify this report.
+7. Select **Create and run** to trigger the creation of report.
+8. Check the **Status** column to see if a report is ready or when it was last updated.
 
-1. From the Data access governance landing page, select **View reports** under **Site permissions for users**.
-2. Review all the available reports and their corresponding status, the list of users for whom the report is generated, how many sites are present in the report, and a button to download the entire report.
+### How do I view the site permissions for users or groups report?
+
+1. From the Data access governance landing page, select **View reports** under **Site permissions for users or groups**.
+2. Review the available reports, their status, the users or groups included in each report, and the number of sites. You can also download the entire report.
 3. Select the relevant **Report name**.
-4. You see all the users as a list to the left. The right side shows the list of sites accessible to the selected user. The right side also displays whether the user can access the entire site or has access to specific items directly or indirectly.
+4. Select a user or group from the list on the left. The right side shows the sites accessible to that user or group and whether the entire site is shared. For users, it also shows counts of items with direct and indirect access. For groups, it shows only the count of items with direct access.
 
-![Report to list all sites accessible to the selected user](sharepointonline/media/data-access-governance/user-permission-report.png)
+The following example shows a user report:
 
-## Download the site permissions for users report
+![Screenshot of a user report listing sites accessible to the selected user.](sharepointonline/media/data-access-governance/user-permission-report.png)
 
-You can download the report for a specific user or for all users by using one of the following options:
+The following example shows a group report. **Site shared** indicates whether the entire site is shared with the selected group, and **Direct access items** shows the count of items shared directly with it. There's no indirect-access count.
 
-1. Select **Download report for** the selected user option to download the report as a CSV file. The file has a limit of 1 million sites.
-2. Select **Download detailed report** to get CSV files for all the users given as input, as a ZIP file.
-3. On the previous page where all the reports are listed, select **Download report** to get CSV files for all the users given as input, as a ZIP file.
+[![Screenshot of a group report listing sites accessible to the selected group, with Site shared and Direct access items columns.](sharepointonline/media/data-access-governance/group-permission-report.png)](sharepointonline/media/data-access-governance/group-permission-report.png#lightbox)
 
-The downloaded report contains the following information:
+## Download the site permissions for users or groups report
+
+You can download the report for a specific user or group, or for all users or groups included in the report, by using one of the following options:
+
+1. To download a CSV file for a specific user or group, select that recipient and use the download link above the site list. For example, a SharePoint group report shows **Download SharePoint report for** followed by the selected group's name. Each CSV file has a limit of 1 million sites.
+2. Select **Download report for all groups** in a group report, or **Download detailed report** in a user report, to get a ZIP file containing CSV files for all recipients included in the report.
+3. On the previous page where all reports are listed, select **Download report** to get a ZIP file containing CSV files for all users or groups included in the report.
+
+The downloaded report contains the following information. The **Items with indirect access count** column is included only in user reports.
 
 | Column | Description |
 | --- | --- |
@@ -120,10 +146,10 @@ The downloaded report contains the following information:
 | Site Privacy | Applicable in Microsoft 365 connected team sites. Specifies the privacy setting of the group. Has values Public or Private |
 | Site Sensitivity | Specifies the sensitivity label applied to the site |
 | Files | Approximate number of all files in the site |
-| Is site shared | Specifies if the user is part of one or more SharePoint groups with site-level access. Yes or No. |
-| Items with direct access count | Number of files or folders shared directly with the user |
-| Items with indirect access count | Number of files or folders the user can access by being part of a group. |
-| Microsoft Entra object ID | GUID identifying the user in Microsoft Entra |
+| Is site shared | Specifies whether the entire site is shared with the user or group. Yes or No. This indicates membership in one or more SharePoint groups with site-level access. |
+| Items with direct access count | Number of files or folders shared directly with the user or group. |
+| Items with indirect access count | User reports only. Number of files or folders the user can access through group membership. This column isn't included in group reports. |
+| Microsoft Entra object ID | GUID identifying the user or group in Microsoft Entra ID. |
 | User principle name | Unique name identifying the user in Microsoft Entra |
 | Display name | Name as displayed in people selection/search related experiences |
 | Report Date | Time of generation of report. It might take up to 48 hours to reflect any changes in the report |

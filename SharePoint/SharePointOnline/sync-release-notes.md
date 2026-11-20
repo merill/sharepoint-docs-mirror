@@ -13,7 +13,7 @@ ms.author: kangan
 manager: gacarini
 ms.service: onedrive
 ms.topic: release-notes
-ms.date: 2026-11-16T00:00:00.0000000Z
+ms.date: 2026-11-18T00:00:00.0000000Z
 locale: en-us
 document_id: dfd91433-e4bc-7aa9-a32e-edca3183815c
 document_version_independent_id: 9865c764-d912-b7db-cf91-299ad8e2a71f
@@ -57,7 +57,7 @@ The OneDrive sync app requires Windows 10 22H2 or Windows 11 to receive updates.
 | Ring | Released | Rolling Out |
 | --- | --- | --- |
 | Production | 26.204.1019.0009 ([amd64](https://go.microsoft.com/fwlink/?linkid=844652) | [arm64](https://go.microsoft.com/fwlink/?linkid=2359340)) | 26.212.1029.0006 ([amd64](https://go.microsoft.com/fwlink/?linkid=860984) | [arm64](https://go.microsoft.com/fwlink/?linkid=2359137)) |
-| Deferred | 26.123.0628.0001 ([amd64](https://go.microsoft.com/fwlink/?linkid=860987) | [arm64](https://go.microsoft.com/fwlink/?linkid=2359341)) | 26.189.0928.0009 ([amd64](https://oneclient.sfx.ms/Win/Installers/26.189.0928.0009/amd64/OneDriveSetup.exe) | [arm64](https://oneclient.sfx.ms/Win/Installers/26.189.0928.0009/arm64/OneDriveSetup.exe)) *Target Date: Nov 12, 2026* |
+| Deferred | 26.189.0928.0011 ([amd64](https://oneclient.sfx.ms/Win/Installers/26.189.0928.0011/amd64/OneDriveSetup.exe) | [arm64](https://oneclient.sfx.ms/Win/Installers/26.189.0928.0011/arm64/OneDriveSetup.exe)) | 26.204.1019.0009 ([amd64](https://oneclient.sfx.ms/Win/Installers/26.204.1019.0009/amd64/OneDriveSetup.exe) | [arm64](https://oneclient.sfx.ms/Win/Installers/26.204.1019.0009/arm64/OneDriveSetup.exe)) *Target Date: Jan 18, 2027 (candidate, not yet rolling out)* |
 
 **What's New**
 
@@ -469,9 +469,13 @@ The OneDrive sync app requires Windows 10 22H2 or Windows 11 to receive updates.
 
 ## Windows Deferred Ring
 
-#### 26.189.0928.0009 (Target Date: Nov 12, 2026)
+#### 26.204.1019.0009 (Target Date: Jan 18, 2027)
 
-- This build is planned for the Deferred ring.
+- This build is a candidate for the Deferred ring.
+
+#### 26.189.0928.0011 (November 16, 2026)
+
+- We resolved product issues to improve the reliability and performance of the OneDrive sync app.
 
 #### 26.123.0628.0001 (October 6, 2026)
 
@@ -534,7 +538,7 @@ The OneDrive sync app requires Windows 10 22H2 or Windows 11 to receive updates.
 | Ring | Released | Rolling Out |
 | --- | --- | --- |
 | Production | 26.204.1019.0009 ([universal](https://go.microsoft.com/fwlink/?linkid=823060)) | 26.212.1029.0006 ([universal](https://go.microsoft.com/fwlink/?linkid=861011)) |
-| Deferred | 26.123.0628.0001 ([universal](https://go.microsoft.com/fwlink/?linkid=861009)) | 26.189.0928.0009 ([universal](https://oneclient.sfx.ms/Mac/Installers/26.189.0928.0009/universal/OneDrive.pkg)) *Target Date: Nov 12, 2026* |
+| Deferred | 26.189.0928.0011 ([universal](https://oneclient.sfx.ms/Mac/Installers/26.189.0928.0011/universal/OneDrive.pkg)) | 26.204.1019.0009 ([universal](https://oneclient.sfx.ms/Mac/Installers/26.204.1019.0009/universal/OneDrive.pkg)) *Target Date: Jan 18, 2027 (candidate, not yet rolling out)* |
 
 **Download:**[Standalone](https://go.microsoft.com/fwlink/?linkid=823060) | [Mac App Store](https://go.microsoft.com/fwlink/p/?LinkId=248255)
 
@@ -917,9 +921,13 @@ The OneDrive sync app requires Windows 10 22H2 or Windows 11 to receive updates.
 
 ## macOS Deferred Ring
 
-#### 26.189.0928.0009 (Target Date: Nov 12, 2026)
+#### 26.204.1019.0009 (Target Date: Jan 18, 2027)
 
-- This build is planned for the Deferred ring.
+- This build is a candidate for the Deferred ring.
+
+#### 26.189.0928.0011 (November 16, 2026)
+
+- We resolved product issues to improve the reliability and performance of the OneDrive sync app.
 
 #### 26.123.0628.0001 (October 6, 2026)
 
