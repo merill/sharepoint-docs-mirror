@@ -233,7 +233,8 @@ Before committing to a trim, you can estimate the impact of your tenant version 
 
     Note
 
-    The projected impact includes both **SharePoint sites** and **OneDrive accounts**.
+    - The projected impact includes both **SharePoint sites** and **OneDrive accounts**.
+    - Data collection results are retained for 30 days after the job completes. After that, run a new data collection job to perform the what-if analysis.
 
 #### 3. Trim existing versions and update document library policies
 
