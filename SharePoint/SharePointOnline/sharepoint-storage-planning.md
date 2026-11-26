@@ -17,6 +17,7 @@ f1.keywords: NOCSH
 ms.topic: concept-article
 ms.service: sharepoint-online
 ms.subservice: platform
+ai-usage: ai-assisted
 ms.localizationpriority: medium
 ms.collection:
 - Strat_OD_admin
@@ -54,7 +55,7 @@ Manage your organization's SharePoint storage by understanding usage, keeping th
 
 Start with storage usage to plan improvements, or use the steps in the following section if you need to free space now.
 
-## Need to free storage now? Start here
+## Need to free up storage now? Start here
 
 1. **Protect capacity while you clean up.** If you're near or over quota, consider **Microsoft 365 SharePoint Storage (pay-as-you-go)** before starting cleanup work. It bills usage above the tenant quota while you reduce consumption. This solution allows you to address your cleanup effort at your own pace, and ensures you don't have to over-procure with a prepaid storage pack, since you'll only pay for what you use. If pay-as-you-go isn't available or suitable, review other tenant capacity options with your billing administrator. Review charges and prerequisites before enabling a service.
 2. **Start with the biggest cleanup opportunity.**Identify what's using storage, then trim eligible versions or archive inactive content. If inactive content is the main contributor, prioritize archiving rather than trimming first. Delete only content that owners confirm is no longer needed and is eligible for deletion.
@@ -251,8 +252,8 @@ Address near-term capacity pressure before waiting for cleanup to finish. Additi
 
 | Option | When to consider it | Before you enable or purchase |
 | --- | --- | --- |
-| **Microsoft 365 SharePoint Storage (pay-as-you-go)** | You want usage-based billing for storage above the tenant quota | Review eligibility, preview status, Azure billing prerequisites, and budget alerts. |
-| **Office 365 Extra File Storage** | You want to purchase additional allocated capacity | Review plan eligibility, purchasing channel, price, and required billing permissions. |
+| [**Microsoft 365 SharePoint Storage (pay-as-you-go)**](/en-us/microsoft-365/commerce/add-storage-space?view=o365-worldwide#add-microsoft-365-sharepoint-storage) | You want usage-based billing for storage above the tenant quota | Review eligibility, preview status, Azure billing prerequisites, and budget alerts. |
+| [**Office 365 Extra File Storage**](/en-us/microsoft-365/commerce/add-storage-space?view=o365-worldwide#add-office-365-extra-file-storage) | You want to purchase additional allocated capacity | Review plan eligibility, purchasing channel, price, and required billing permissions. |
 | **Eligible additional user licenses** | You also need licenses for users | Confirm the storage contribution for your specific plan; don't assume all licenses add the same capacity. |
 
 Follow [Add storage capacity](/en-us/microsoft-365/commerce/add-storage-space?view=o365-worldwide) for current availability and setup instructions.
@@ -279,6 +280,17 @@ For your plan's storage entitlement and limits, see [SharePoint limits](/en-us/o
 Note
 
 **Pooled-storage exception:** OneDrive storage is separate from SharePoint tenant storage unless your tenant uses a shared storage pool. In pooled-storage tenants, such as Education and trial tenants where OneDrive and SharePoint share capacity, cleaning up OneDrive can free space in that shared pool. Check your tenant's storage model before attributing savings. For Education customers, see [Pooled storage management](/en-us/microsoft-365/education/guide/1-reference/pooled-storage-management).
+
+### Recommended setup to manage storage and costs
+
+Combine usage-based capacity with version and content lifecycle policies to support growth without keeping unnecessary content in active storage.
+
+- Enable Microsoft 365 SharePoint Storage (pay-as-you-go), where eligible. Pay for usage above included capacity without prepurchasing storage packs. This provides flexibility while you clean up content and manage changing storage needs.
+- Use Automatic version history limits and trim existing versions. Microsoft recommends **Automatic** to balance recovery needs and storage efficiency without choosing version count or age limits. Apply the policy to existing libraries and trim eligible versions to match, accounting for retention and recovery requirements.
+- Use Microsoft 365 Archive for inactive content you need to keep. Archiving frees active storage quota and offers a lower storage rate for inactive content. There’s no additional Archive storage charge when combined active and archived SharePoint storage remains within licensed capacity.
+- Use content lifecycle policies to sustain the improvements. Configure inactive site and inactive files policies to archive eligible content, and retention policies to delete content after an approved period. Preview storage impact through what-if analysis or policy simulation before taking action.
+
+Together, these settings keep active storage focused on content people use, reduce unnecessary version growth, and align storage costs with usage.
 
 ## FAQs
 
